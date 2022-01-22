@@ -3,6 +3,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import homePic from '../assets/dippedHome.jpeg' // 1280 x 853
 import trayBerries from '../assets/trayBerries.jpeg'
+import valentinesCat from '../assets/valentinesCat.jpeg'
+
+const testData = [
+  {
+    title: "Valentine's Day",
+    image: valentinesCat
+  }
+]
 
 const Home: NextPage = () => {
   return (
@@ -27,15 +35,30 @@ const Home: NextPage = () => {
       </div>
     </div>
     <h1 className='mt-5 ml-4 font-quando text-2xl'>Bestsellers</h1>
+    <div>
+      {testData.map((item, index) => {
+        return (
+          <div key={index}>
+            <CategoryCard title={item.title} image={item.image} />
+          </div>
+        )
+      })}
+    </div>
     </div>
     </>
   )
 }
 
-const ProductCard = () => {
+interface CategoryCardProps {
+  title: string;
+  image: StaticImageData;
+}
+
+const CategoryCard: React.FC<CategoryCardProps> = ({ title, image }) => {
   return (
     <div>
-      product card
+      <h1>{title}</h1>
+      <Image src={image} height={100} width={100} />
     </div>
   )
 }
