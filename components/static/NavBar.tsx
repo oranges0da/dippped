@@ -28,10 +28,13 @@ export const Navbar: React.FC = () => {
               <NavButton path='/' name='Home' />
             </li>
             <li>
-              <NavButton path='/products' name='Shop' />
+              <NavButton path='/valentines' name="Valentine's Day" />
             </li>
             <li>
-              <NavButton path='/valentines' name="Valentine's Day" />
+              <NavButton path='/wedding' name='Wedding' />
+            </li>
+            <li>
+              <NavButton path='/bouquet' name='Bouquet' />
             </li>
             <li>
               <NavButton path='/about' name='About' />
