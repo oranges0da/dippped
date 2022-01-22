@@ -5,6 +5,7 @@ import homePic from '../assets/dippedHome.jpeg' // 1280 x 853
 import trayBerries from '../assets/trayBerries.jpeg'
 import valentinesCat from '../assets/heartBerry.jpg'
 import weddingBerry from '../assets/weddingBerry.jpg'
+import boBerry from '../assets/boBerry.jpeg'
 
 const testData = [
   {
@@ -13,6 +14,9 @@ const testData = [
   }, {
     title: "Wedding",
     image: weddingBerry
+  }, {
+    title: "Bouquet Berries",
+    image: boBerry
   }
 ]
 
@@ -23,7 +27,7 @@ const Home: NextPage = () => {
       <title>Dipped Home</title>
     </Head>
     <div>
-    <div className='inline bg-pink border-b-2 border-pink'>
+    <div className='bg-pink border-b-2 border-pink'>
         <Image src={homePic} />
       <div className='bg-pink text-center pb-7'>
         <h1 className='font-quando text-2xl pt-12 pl-10 pr-10'>
@@ -61,7 +65,7 @@ interface CategoryCardProps {
 const CategoryCard: React.FC<CategoryCardProps> = ({ title, image }) => {
   return (
     <div className='my-8 mx-4 hover:cursor-pointer hover:scale-110'>
-      <Image src={image} />
+      <Image src={image} height={500} width={500} />
       <div className='bg-pink border-t-8 border-pink'>
         <h1>{title}</h1>
       </div>
