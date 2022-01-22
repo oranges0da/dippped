@@ -3,12 +3,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import homePic from '../assets/dippedHome.jpeg' // 1280 x 853
 import trayBerries from '../assets/trayBerries.jpeg'
-import valentinesCat from '../assets/valentinesCat.jpeg'
+import valentinesCat from '../assets/heartBerry.jpg'
+import weddingBerry from '../assets/weddingBerry.jpg'
 
 const testData = [
   {
     title: "Valentine's Day",
     image: valentinesCat
+  }, {
+    title: "Wedding",
+    image: weddingBerry
   }
 ]
 
@@ -34,8 +38,8 @@ const Home: NextPage = () => {
         </h2>
       </div>
     </div>
-    <h1 className='mt-5 ml-4 font-quando text-2xl'>Bestsellers</h1>
-    <div>
+    <h1 className='mt-7 ml-5 font-quando text-2xl'>Bestsellers</h1>
+    <div className='md:flex '>
       {testData.map((item, index) => {
         return (
           <div key={index}>
@@ -56,9 +60,11 @@ interface CategoryCardProps {
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ title, image }) => {
   return (
-    <div>
-      <h1>{title}</h1>
-      <Image src={image} height={100} width={100} />
+    <div className='my-8 mx-4 hover:cursor-pointer hover:scale-110'>
+      <Image src={image} />
+      <div className='bg-pink border-t-8 border-pink'>
+        <h1>{title}</h1>
+      </div>
     </div>
   )
 }
