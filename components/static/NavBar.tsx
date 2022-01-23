@@ -4,6 +4,7 @@ import chocoBar from '../../assets/chocoBar.png'
 import hamburg from '../../assets/hamburg3.png'
 import homePic from '../../assets/dippedHome.jpeg'
 import cartIcon from '../../assets/cartIcon2.png'
+import NavButton from '../NavButton';
 
 // various sizes for icons
 const cartSize = 75
@@ -36,14 +37,6 @@ export const Navbar: React.FC = () => {
             <li>
               <NavButton path='/bouquet' name='Bouquet' />
             </li>
-            <li>
-              <NavButton path='/about' name='About' />
-            </li>
-            <li>
-              <NavButton path='/contact' name='FAQ' />
-            </li>            <li>
-              <NavButton path='/contact' name='More Details' />
-            </li>
           </ul>
           </div>
           <div className="items-center lg:flex lg:order-2 lg:mr-2" id="mobile-menu-2">
@@ -53,22 +46,6 @@ export const Navbar: React.FC = () => {
     </nav>
   );
 };
-
-interface NavProps {
-  name: string,
-  path: string
-}
-
-// main navbar buttons home, contact, etc
-const NavButton: React.FC<NavProps> = props => {
-  return (
-    <div className='hover:cursor-pointer opacity-[0.7] hover:underline hover:opacity-[1] mr-1 hover:underline-offset-4'>
-      <Link href={props.path}>
-        <h1>{props.name}</h1>
-      </Link>
-    </div>
-  )
-}
 
 interface LogoProps {
   source: StaticImageData,
