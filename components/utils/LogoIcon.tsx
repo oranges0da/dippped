@@ -12,7 +12,7 @@ const LogoIcon: React.FC<LogoProps> = ({ source, size, path }) => {
   return (
     <div className='sm:hover:scale-110 hover:cursor-pointer ml-6'>
       <Link href={path}>
-        <Image src={source} width={size} height={size} className="mx-auto" />
+        <Image src={source} width={size} height={size} />
       </Link>
   </div>
 

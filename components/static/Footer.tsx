@@ -4,8 +4,7 @@ import fb from '../../assets/fb.png'
 import Image from 'next/image'
 import tiktok from '../../assets/tiktok.png'
 import insta from '../../assets/insta.png'
-
-const socialLinksSize = 30;
+import LogoIcon from '../utils/LogoIcon'
 
 const Footer: React.FC = () => {
   return (
@@ -17,10 +16,10 @@ const Footer: React.FC = () => {
         <FooterButton path='/privacy' name='Privacy Policy' />
         <FooterButton path='/faq' name='FAQ' />
       </ul>
-      <div className='flex md:justify-end justify-center'>
-        <Image src={fb} height={socialLinksSize} width={socialLinksSize} />
-        <Image src={tiktok} height={socialLinksSize} width={socialLinksSize} />
-        <Image src={insta} height={socialLinksSize} width={socialLinksSize} />
+      <div className='flex md:justify-end justify-center mr-5'>
+        <LogoIcon source={fb} size={30} path='/' />
+        <LogoIcon source={tiktok} size={29} path='/' />
+        <LogoIcon source={insta} size={30} path='/' />
       </div>
     </div>
   )
