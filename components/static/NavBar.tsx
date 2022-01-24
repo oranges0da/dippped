@@ -5,6 +5,7 @@ import hamburg from '../../assets/hamburg3.png'
 import homePic from '../../assets/dippedHome.jpeg'
 import cartIcon from '../../assets/cartIcon2.png'
 import NavButton from '../utils/NavButton';
+import LogoIcon from '../utils/LogoIcon';
 
 // various sizes for icons
 const cartSize = 75
@@ -17,11 +18,11 @@ export const Navbar: React.FC = () => {
       <div className="flex justify-between">
         <div className="flex align-center lg:order-2">
             <button data-collapse-toggle="mobile-menu-2" type="button" className="inline-flex items-center mr-4 text-sm text-gray-500 rounded-lg lg:hidden hover" aria-controls="mobile-menu-2" aria-expanded="false">
-              <LogoIcon source={hamburg} size={hamburgSize} />
+              <LogoIcon source={hamburg} size={hamburgSize} path='/' />
             </button>
         </div>
         <div className='lg:mr-20'>
-          <LogoIcon source={chocoBar} size={logoSize} />
+          <LogoIcon source={chocoBar} size={logoSize} path='/' />
         </div>
         <div className="hidden items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
           <ul className="flex mt-4 lg:flex-row lg:space-x-8 lg:ml-20 lg:mt-0 lg:text-sm lg:font-medium">
@@ -40,28 +41,11 @@ export const Navbar: React.FC = () => {
           </ul>
           </div>
           <div className="items-center lg:flex lg:order-2 lg:mr-2" id="mobile-menu-2">
-            <LogoIcon source={cartIcon} size={cartSize} />
+            <LogoIcon source={cartIcon} size={cartSize} path='/' />
           </div>
       </div>
     </nav>
   );
 };
-
-interface LogoProps {
-  source: StaticImageData,
-  size: number
-}
-
-// logo icons on either sides of navbar
-const LogoIcon: React.FC<LogoProps> = ({ source, size }) => {
-  return (
-    <div className='sm:hover:scale-110 hover:cursor-pointer ml-6'>
-      <Link href='/'>
-        <Image src={source} width={size} height={size} className="mx-auto" />
-      </Link>
-  </div>
-
-  )
-}
 
 export default Navbar

@@ -3,6 +3,7 @@ import NavButton from '../utils/NavButton'
 import fb from '../../assets/fb.png'
 import Image from 'next/image'
 import tiktok from '../../assets/tiktok.png'
+import insta from '../../assets/insta.png'
 
 const socialLinksSize = 30;
 
@@ -19,6 +20,7 @@ const Footer: React.FC = () => {
       <div className='flex md:justify-end justify-center'>
         <Image src={fb} height={socialLinksSize} width={socialLinksSize} />
         <Image src={tiktok} height={socialLinksSize} width={socialLinksSize} />
+        <Image src={insta} height={socialLinksSize} width={socialLinksSize} />
       </div>
     </div>
   )
