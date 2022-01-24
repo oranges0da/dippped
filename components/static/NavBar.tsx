@@ -4,7 +4,7 @@ import chocoBar from '../../assets/chocoBar.png'
 import hamburg from '../../assets/hamburg3.png'
 import homePic from '../../assets/dippedHome.jpeg'
 import cartIcon from '../../assets/cartIcon2.png'
-import NavButton from '../NavButton';
+import NavButton from '../utils/NavButton';
 
 // various sizes for icons
 const cartSize = 75
@@ -16,7 +16,7 @@ export const Navbar: React.FC = () => {
     <nav className="py-8 sticky top-0 z-[1000] bg-white font-karla">
       <div className="flex justify-between">
         <div className="flex align-center lg:order-2">
-            <button data-collapse-toggle="mobile-menu-2" type="button" className="inline-flex items-center mr-5 text-sm text-gray-500 rounded-lg lg:hidden hover" aria-controls="mobile-menu-2" aria-expanded="false">
+            <button data-collapse-toggle="mobile-menu-2" type="button" className="inline-flex items-center mr-4 text-sm text-gray-500 rounded-lg lg:hidden hover" aria-controls="mobile-menu-2" aria-expanded="false">
               <LogoIcon source={hamburg} size={hamburgSize} />
             </button>
         </div>

@@ -6,17 +6,21 @@ import trayBerries from '../assets/trayBerries.jpeg'
 import valentinesCat from '../assets/heartBerry.jpg'
 import weddingBerry from '../assets/weddingBerry.jpg'
 import boBerry from '../assets/boBerry.jpeg'
+import Link from 'next/link'
 
 const testData = [
   {
     title: "Valentine's Day",
-    image: valentinesCat
+    image: valentinesCat,
+    path: 'valentines'
   }, {
     title: "Wedding",
-    image: weddingBerry
+    image: weddingBerry,
+    path: 'wedding'
   }, {
     title: "Bouquet Berries",
-    image: boBerry
+    image: boBerry,
+    path: 'bouquet'
   }
 ]
 
@@ -47,7 +51,7 @@ const Home: NextPage = () => {
       {testData.map((item, index) => {
         return (
           <div key={index}>
-            <CategoryCard title={item.title} image={item.image} />
+            <CategoryCard title={item.title} image={item.image} path={item.path}/>
           </div>
         )
       })}
@@ -60,15 +64,20 @@ const Home: NextPage = () => {
 interface CategoryCardProps {
   title: string;
   image: StaticImageData;
+  path: string;
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ title, image }) => {
+const CategoryCard: React.FC<CategoryCardProps> = ({ title, image, path }) => {
   return (
     <div className='bg-pink my-8 mx-4 hover:cursor-pointer'>
-      <Image src={image} height={500} width={500} />
-      <div className='ml-2 pb-2'>
-        <h1 className='text-md'>{title}</h1>
-      </div>
+      <Link href={path}>
+          <div>
+          <Image src={image} height={500} width={500} />
+          <div className='ml-2 pb-2'>
+            <h1 className='text-md'>{title}</h1>
+          </div>
+          </div>
+      </Link>
     </div>
   )
 }

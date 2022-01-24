@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import NavButton from '../NavButton'
+import NavButton from '../utils/NavButton'
 
 const Footer: React.FC = () => {
   return (
