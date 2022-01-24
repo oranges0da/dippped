@@ -37,7 +37,7 @@ const Home: NextPage = () => {
         <h1 className='font-quando text-2xl pt-12 pl-10 pr-10'>
           Give a Gift That Leaves a Lasting Impression
         </h1>
-        <h2 className='pt-6 px-20 font-karla'>
+        <h2 className='pt-6 px-20 font-karla md:mx-20'>
           A unqiue gift that will leave recipeients 
           feeling happy, excited, and surprised. 
           With our dipped treats, you will get a
