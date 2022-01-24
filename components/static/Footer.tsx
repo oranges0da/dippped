@@ -9,7 +9,7 @@ import LogoIcon from '../utils/LogoIcon'
 const Footer: React.FC = () => {
   return (
     <div className='border-t border-gray my-6 font-karla'>
-      <ul className='md:flex justify-center my-10'>
+      <ul className='md:flex md:justify-center my-10 ml-5'>
         <FooterButton path='/about' name='About' />
         <FooterButton path='/contact' name='Contact' />
         <FooterButton path='/refunds' name='Refunds and Cancellations' />
@@ -32,7 +32,7 @@ interface FooterButtonProps {
 
 const FooterButton: React.FC<FooterButtonProps> = ({ name, path }) => {
   return (
-    <li className='mr-5'>
+    <li className='mr-8 my-7 md:ml-2 ml-7'>
       <NavButton path={path} name={name} />
     </li>
   )
