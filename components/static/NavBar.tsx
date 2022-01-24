@@ -55,23 +55,28 @@ export const Navbar: React.FC = () => {
           </div>
       </div>
       <div className='mobile-menu hidden'>
-        <ul className="">
-          <li>
-            <NavButton path='/' name='Home' />
-          </li>
-          <li>
-            <NavButton path='/valentines' name="Valentine's Day" />
-          </li>
-          <li>
-            <NavButton path='/wedding' name='Wedding' />
-          </li>
-          <li>
-            <NavButton path='/bouquet' name='Bouquet' />
-          </li>
-            </ul>
+        <ul className='flex-row text-center my-4 lg:hidden'>
+          <MobileNavButton name='Home' path='/' />
+          <MobileNavButton name="Valentine's Day" path='/valentines' />  
+          <MobileNavButton name='Wedding' path='/wedding' />  
+          <MobileNavButton name='Bouquet' path='/bouquet' />  
+        </ul>
       </div>
     </nav>
   );
 };
+
+interface MobileNavButtonProps {
+  name: string;
+  path: string;
+}
+
+const MobileNavButton: React.FC<MobileNavButtonProps> = ({ name, path }) => {
+  return (
+    <li className='ml-6 my-5'>
+      <NavButton path={path} name={name} />
+    </li>
+  )
+}
 
 export default Navbar
