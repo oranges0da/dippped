@@ -40,13 +40,13 @@ export const Navbar: React.FC = () => {
               <NavButton path='/' name='Home' />
             </li>
             <li>
-              <NavButton path='/valentines' name="Valentine's Day" />
+              <NavButton path='/category/valentines' name="Valentine's Day" />
             </li>
             <li>
-              <NavButton path='/wedding' name='Wedding' />
+              <NavButton path='/category/wedding' name='Wedding' />
             </li>
             <li>
-              <NavButton path='/bouquet' name='Bouquet' />
+              <NavButton path='/category/bouquet' name='Bouquet' />
             </li>
           </ul>
           </div>

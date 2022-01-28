@@ -19,7 +19,7 @@ const testData = [
     path: 'wedding'
   }, {
     title: "Bouquet Berries",
-    image: boBerry,
+    image: 'https://images-gmi-pmc.edge-generalmills.com/7b6a8b4e-3426-47fb-901c-796b5c794559.jpg',
     path: 'bouquet'
   }
 ]
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
 
 interface CategoryCardProps {
   title: string;
-  image: StaticImageData;
+  image: StaticImageData | string;
   path: string;
 }
 

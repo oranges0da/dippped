@@ -3,8 +3,7 @@ module.exports = {
   reactStrictMode: true,
   images: {
     domains: [
-      'https://i.dlpng.com',
-      'https://i.pinimg.com'
+      "images-gmi-pmc.edge-generalmills.com"
     ]
   }
 }
