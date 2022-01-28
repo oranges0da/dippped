@@ -31,7 +31,7 @@ export const Navbar: React.FC = () => {
             <Image src={hamburg} height={50} width={50} />
           </button>
         </div>
-        <div className='lg:mr-20'>
+        <div className='lg:mr-20 mr-3'>
           <LogoIcon source={chocoBar} size={logoSize} path='/' />
         </div>
         <div className="hidden items-center w-full lg:flex lg:w-auto lg:order-1">
@@ -73,7 +73,7 @@ interface MobileNavButtonProps {
 
 const MobileNavButton: React.FC<MobileNavButtonProps> = ({ name, path }) => {
   return (
-    <li className='ml-6 my-5'>
+    <li className='ml-1 my-4'>
       <NavButton path={path} name={name} />
     </li>
   )
