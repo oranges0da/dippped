@@ -44,20 +44,28 @@ export const Navbar: React.FC = () => {
               <NavButton path='/category/wedding' name='Wedding' />
             </li>
             <li>
-              <NavButton path='/category/bouquet' name='Bouquet' />
+              <NavButton path='/category/birthday' name='Birthday' />
+            </li>
+            <li>
+              <NavButton path='/category/boxed' name='Boxed' />
+            </li>
+            <li>
+              <NavButton path='/category/him' name='For Him' />
             </li>
           </ul>
           </div>
           <div className="items-center lg:flex lg:order-2 lg:mr-2">
-            <LogoIcon source={cartIcon} size={cartSize} path='/' />
+            <LogoIcon source={cartIcon} size={cartSize} path='/cart' />
           </div>
       </div>
       <div className='mobile-menu hidden'>
-        <ul className='flex-row text-center my-4 lg:hidden'>
+        <ul className='flex-row text-center my-7 lg:hidden'>
           <MobileNavButton name='Home' path='/' />
-          <MobileNavButton name="Valentine's Day" path='/valentines' />  
-          <MobileNavButton name='Wedding' path='/wedding' />  
-          <MobileNavButton name='Bouquet' path='/bouquet' />  
+          <MobileNavButton name="Valentine's Day" path='/category/valentines' />  
+          <MobileNavButton name='Wedding' path='/category/wedding' />  
+          <MobileNavButton name='Birthday' path='/category/birthday' />  
+          <MobileNavButton name='Boxed' path='/category/boxed' />
+          <MobileNavButton name='For Him' path='/category/him' />
         </ul>
       </div>
     </nav>
