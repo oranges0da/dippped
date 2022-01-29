@@ -1,11 +1,9 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import chocoBar from '../../assets/chocoBar.png'
 import hamburg from '../../assets/hamburg3.png'
-import homePic from '../../assets/dippedHome.jpeg'
 import cartIcon from '../../assets/cartIcon2.png'
 import NavButton from '../utils/NavButton';
 import LogoIcon from '../utils/LogoIcon';
+import lightLogo from '../../assets/longAngleBerry.png'
 
 // various sizes for icons
 const cartSize = 75
@@ -32,7 +30,7 @@ export const Navbar: React.FC = () => {
           </button>
         </div>
         <div className='lg:mr-20 mr-3'>
-          <LogoIcon source={chocoBar} size={logoSize} path='/' />
+          <LogoIcon source={lightLogo} size={logoSize} path='/' />
         </div>
         <div className="hidden items-center w-full lg:flex lg:w-auto lg:order-1">
           <ul className="flex mt-4 lg:flex-row lg:space-x-8 lg:ml-20 lg:mt-0 lg:text-sm lg:font-medium">
