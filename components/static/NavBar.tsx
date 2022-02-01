@@ -38,19 +38,22 @@ export const Navbar: React.FC = () => {
               <NavButton path='/' name='Home' />
             </li>
             <li>
-              <NavButton path='/category/valentines' name="Valentine's Day" />
+              <NavButton path='/product' name="Shop" />
             </li>
             <li>
-              <NavButton path='/category/wedding' name='Wedding' />
+              <NavButton path='/about' name="About" />
             </li>
             <li>
-              <NavButton path='/category/birthday' name='Birthday' />
+              <NavButton path='/contact' name="Contact" />
             </li>
             <li>
-              <NavButton path='/category/boxed' name='Boxed' />
+              <NavButton path='/privacy' name="Privacy Policy" />
             </li>
             <li>
-              <NavButton path='/category/him' name='For Him' />
+              <NavButton path='/refunds' name="Refunds" />
+            </li>
+            <li>
+              <NavButton path='/faq' name="FAQ" />
             </li>
           </ul>
           </div>
@@ -61,11 +64,12 @@ export const Navbar: React.FC = () => {
       <div className='mobile-menu hidden'>
         <ul className='flex-row text-center my-7 lg:hidden'>
           <MobileNavButton name='Home' path='/' />
-          <MobileNavButton name="Valentine's Day" path='/category/valentines' />  
-          <MobileNavButton name='Wedding' path='/category/wedding' />  
-          <MobileNavButton name='Birthday' path='/category/birthday' />  
-          <MobileNavButton name='Boxed' path='/category/boxed' />
-          <MobileNavButton name='For Him' path='/category/him' />
+          <MobileNavButton name="Shop" path='/product' />  
+          <MobileNavButton name='About' path='/about' />  
+          <MobileNavButton name='Contact' path='/contact' />  
+          <MobileNavButton name='Privacy Policy' path='/privacy' />
+          <MobileNavButton name='Refunds' path='/refunds' />
+          <MobileNavButton name='FAQ' path='/faq' />
         </ul>
       </div>
     </nav>
