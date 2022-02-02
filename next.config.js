@@ -4,7 +4,8 @@ module.exports = {
   images: {
     domains: [
       "images-gmi-pmc.edge-generalmills.com",
-      "lh3.googleusercontent.com"
+      "lh3.googleusercontent.com",
+      "i.imgur.com"
     ]
   }
 }
