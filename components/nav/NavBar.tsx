@@ -38,7 +38,7 @@ export const Navbar: React.FC = () => {
               <NavButton path='/' name='Home' />
             </li>
             <li>
-              <NavButton path='/product' name="Shop" />
+              <NavButton path='/products' name="Shop" />
             </li>
             <li>
               <NavButton path='/about' name="About" />
@@ -64,7 +64,7 @@ export const Navbar: React.FC = () => {
       <div className='mobile-menu hidden'>
         <ul className='flex-row text-center my-7 lg:hidden'>
           <MobileNavButton name='Home' path='/' />
-          <MobileNavButton name="Shop" path='/product' />  
+          <MobileNavButton name="Shop" path='/products' />  
           <MobileNavButton name='About' path='/about' />  
           <MobileNavButton name='Contact' path='/contact' />  
           <MobileNavButton name='Privacy Policy' path='/privacy' />
