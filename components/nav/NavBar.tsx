@@ -22,7 +22,7 @@ if (typeof window === 'object') {
 
 export const Navbar: React.FC = () => {
   return (
-    <nav className="py-8 sticky top-0 z-[1000] bg-white font-karla">
+    <nav className="py-8 sticky top-0 z-[1000] bg-white font-karla border-b border-gray">
       <div className="flex justify-between">
         <div className="flex align-center lg:order-2">
           <button  type="button" className="mobile-menu-button inline-flex items-center mr-4 text-sm sm:hover:scale-110 hover:cursor-pointer ml-6 rounded-lg lg:hidden hover" aria-controls="mobile-menu-2" aria-expanded="false">
