@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 interface LogoProps {
-  source: StaticImageData,
+  source: string,
   size: number
   path: string
 }

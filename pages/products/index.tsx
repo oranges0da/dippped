@@ -12,14 +12,14 @@ const Product: NextPage = ({ products }: any) => {
       <Head>
         <title>Products - Dippped</title>
       </Head>
-      <div>
-        <h1 className='ml-5'>Products</h1>
+      <div className='font-karla'>
+        <h1 className='ml-5 text-5xl'>Products</h1>
         <h2>Our Catalogue of Products</h2>
         {products.map((item, index) => (
           <ProductCard 
             name={item.name} 
             price={item.price}
-            image={item.images[index]}/>
+            image={item.images[0]}/>
         ))}
       </div>
     </>

@@ -1,18 +1,14 @@
 import React from 'react'
 import NavButton from '../utils/NavButton'
-import fb from '../../assets/fb.png'
-import Image from 'next/image'
-import tiktok from '../../assets/tiktok.png'
-import insta from '../../assets/insta.png'
 import LogoIcon from '../utils/LogoIcon'
 
 const Footer: React.FC = () => {
   return (
     <div className='border-t border-gray my-6 font-karla text-sm'>
       <div className='flex md:justify-end justify-center mr-5 my-14'>
-        <LogoIcon source={fb} size={30} path='/' />
-        <LogoIcon source={tiktok} size={29} path='/' />
-        <LogoIcon source={insta} size={30} path='/' />
+        <LogoIcon source='https://i.imgur.com/fo9OVTB.png' size={32} path='/' />
+        <LogoIcon source='https://i.imgur.com/buM9fEc.png' size={29} path='/' />
+        <LogoIcon source='https://i.imgur.com/E5t7hMe.png' size={30} path='/' />
       </div>
     </div>
   )

@@ -7,7 +7,6 @@ import lightLogo from '../../assets/longAngleBerry.png'
 
 // various sizes for icons
 const cartSize = 75
-const hamburgSize = 40
 const logoSize = 65
 
 // toggle mobile navbar
@@ -26,11 +25,11 @@ export const Navbar: React.FC = () => {
       <div className="flex justify-between">
         <div className="flex align-center lg:order-2">
           <button  type="button" className="mobile-menu-button inline-flex items-center mr-4 text-sm sm:hover:scale-110 hover:cursor-pointer ml-6 rounded-lg lg:hidden hover" aria-controls="mobile-menu-2" aria-expanded="false">
-            <Image src={hamburg} height={50} width={50} />
+            <Image src='https://i.imgur.com/h664CAz.png' height={50} width={50} />
           </button>
         </div>
         <div className='lg:mr-20 mr-3'>
-          <LogoIcon source={lightLogo} size={logoSize} path='/' />
+          <LogoIcon source='https://i.imgur.com/peLRaic.png' size={logoSize} path='/' />
         </div>
         <div className="hidden items-center w-full lg:flex lg:w-auto lg:order-1">
           <ul className="flex mt-4 lg:flex-row lg:space-x-8 lg:ml-20 lg:mt-0 lg:text-sm lg:font-medium">
@@ -58,7 +57,7 @@ export const Navbar: React.FC = () => {
           </ul>
           </div>
           <div className="items-center lg:flex lg:order-2 lg:mr-2">
-            <LogoIcon source={cartIcon} size={cartSize} path='/cart' />
+            <LogoIcon source='https://i.imgur.com/IfvSH09.jpg' size={cartSize} path='/cart' />
           </div>
       </div>
       <div className='mobile-menu hidden'>
