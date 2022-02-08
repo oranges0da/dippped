@@ -9,7 +9,7 @@ const BestSellerData = [
   {
     title: "Valentine's Day Box",
     price: 40,
-    image: 'https://i.imgur.com/R1YVxMF.jpg'
+    image: 'https://i.imgur.com/mpfO7bt.jpg'
   }, {
     title: "Mini Wedding Box",
     price: 20,
@@ -19,9 +19,9 @@ const BestSellerData = [
     price: 40,
     image: 'https://i.imgur.com/TbUVpvi.jpg'
   }, {
-    title: 'example'
-  }, {
-    title: 'exs'
+    title: "Wedding Box",
+    price: 30,
+    image: 'https://i.imgur.com/ALiZFnz.jpg'
   }
 ]
 
@@ -81,11 +81,10 @@ const BestSellerImageSize = 500;
 const BestSellerCard: React.FC<BestSellerCardProps> = ({ title, price, image }) => {
   return (
     <Link href='/products'>
-      <div className='hover:cursor-pointer mt-7 mx-4 bg-pink font-karla font-bold'>
+      <div className='hover:cursor-pointer mt-8 mx-4 bg-pink font-karla font-bold rounded'>
         <img src={image} />
-        <div className='flex justify-between mx-3 px-2 pt-3 pb-4'>
+        <div className='flex justify-between mx-3 px-2 pt-4 pb-4'>
           <h1>{title}</h1>
-          <h1>${price - 0.1}9</h1>
         </div>
       </div>
     </Link>
