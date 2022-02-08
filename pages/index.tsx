@@ -1,12 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import homePic from '../assets/dippedHome.jpeg' // 1280 x 853
-import trayBerries from '../assets/trayBerries.jpeg'
-import valentinesCat from '../assets/heartBerry.jpg'
-import weddingBerry from '../assets/weddingBerry.jpg'
-import boBerry from '../assets/boBerry.jpeg'
-import Link from 'next/link'
+import NavButton from '../components/utils/NavButton'
+import axios from 'axios'
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +12,7 @@ const Home: NextPage = () => {
     </Head>
     <div>
     <div className='bg-pink border-b-2 border-pink'>
-        <Image src='https://i.imgur.com/5b2t7sF.jpg' height={100} width={100} />
+      <ShopNowButton />
       <div className='bg-pink text-center pb-7'>
         <h1 className='font-quando text-2xl pt-12 pl-10 pr-10'>
           Give a Gift That Leaves a Lasting Impression
@@ -34,6 +30,34 @@ const Home: NextPage = () => {
     </div>
     </>
   )
+}
+
+// overlay on image "shop now" button
+const ShopNowButton = () => {
+  return (
+    <div className="relative ">
+      <img src='https://i.imgur.com/5b2t7sF.jpg' />
+    </div> 
+  )
+}
+
+// bestsellers
+const BestsellerCard = ({ props }) => {
+  return (
+    <div>
+
+    </div>
+  )
+}
+
+// to get "bestseller" product data
+const getStaticProps = async () => {
+  const { data } = await axios.get('http://localhost:4000/api/products')
+  const products = data.products;
+
+  return {
+    props: {}
+  }
 }
 
 export default Home

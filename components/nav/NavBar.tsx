@@ -1,9 +1,6 @@
 import Image from 'next/image';
-import hamburg from '../../assets/hamburg3.png'
-import cartIcon from '../../assets/cartIcon2.png'
 import NavButton from '../utils/NavButton';
 import LogoIcon from '../utils/LogoIcon';
-import lightLogo from '../../assets/longAngleBerry.png'
 
 // various sizes for icons
 const cartSize = 75
@@ -80,6 +77,7 @@ interface MobileNavButtonProps {
   path: string;
 }
 
+// components for individual mobile navbar buttons
 const MobileNavButton: React.FC<MobileNavButtonProps> = ({ name, path }) => {
   return (
     <li className='ml-1 my-4'>
