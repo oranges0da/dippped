@@ -13,14 +13,16 @@ const Product: NextPage = ({ products }: any) => {
         <title>Products - Dippped</title>
       </Head>
       <div className='font-karla'>
-        <h1 className='ml-5 text-5xl'>Products</h1>
-        <h2>Our Catalogue of Products</h2>
-        {products.map((item, index) => (
-          <ProductCard 
-            name={item.name} 
-            price={item.price}
-            image={item.images[0]}/>
-        ))}
+        <h1 className='ml-5 mt-10 text-4xl font-ubuntu'>Shop</h1>
+        <h2 className='ml-5 my-5'>Our Catalogue of Products.</h2>
+        <div className='flex-wrap'>
+          {products.map(item => (
+            <ProductCard 
+              name={item.name} 
+              price={item.price}
+              image={item.images[0]}/>
+          ))}
+        </div>
       </div>
     </>
   )
@@ -34,10 +36,10 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ name, price, image }) => {
   return (
-    <div>
-      <Image src={image} height={100} width={100} />
-      <h1>{name}</h1>
-      <h1>{price}</h1>
+    <div className='basis-1/2 mx-5 bg-pink rounded-sm'>
+      <img src={image} />
+      <h1 className='font-bold my-2'>{name}</h1>
+      <h1>${price - 0.1}9</h1>
     </div>
   )
 }

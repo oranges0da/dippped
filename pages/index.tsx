@@ -75,8 +75,6 @@ interface BestSellerCardProps {
   image: string
 }
 
-const BestSellerImageSize = 500;
-
 // bestsellers
 const BestSellerCard: React.FC<BestSellerCardProps> = ({ title, price, image }) => {
   return (
