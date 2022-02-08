@@ -17,14 +17,14 @@ const BestSellerData = [
   }
 ]
 
-const Home: NextPage = ({ props }) => {
+const Home: NextPage = () => {
   return (
     <>
     <Head>
       <title>Dipped Home</title>
     </Head>
     <div>
-    <div className='bg-pink border-b-2 border-pink'>
+    <div className='bg-pink border-b-2 border-pink align-center'>
       <ShopNowButton />
       <div className='bg-pink text-center pb-7'>
         <h1 className='font-quando text-2xl pt-12 pl-10 pr-10'>
@@ -42,7 +42,7 @@ const Home: NextPage = ({ props }) => {
     <h1 className='md:ml-10 md:mt-10 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
     {BestSellerData.map((item, index) => (
       <div key={index}>
-        <BestsellerCard title={item.title} price={item.price} image={item.image} />
+        <BestSellerCard title={item.title} price={item.price} image={item.image} />
       </div>
     ))}
     </div>
@@ -59,33 +59,27 @@ const ShopNowButton: React.FC = () => {
   )
 }
 
-interface BestsellerCardProps {
+interface BestSellerCardProps {
   title: string,
   price: number,
   image: string
 }
 
+const BestSellerImageSize = 500;
+
 // bestsellers
-const BestsellerCard: React.FC<BestsellerCardProps> = ({ title, price, image }) => {
+const BestSellerCard: React.FC<BestSellerCardProps> = ({ title, price, image }) => {
   return (
     <Link href='/products'>
-      <div className='hover:cursor-pointer'>
-        <Image src={image} width={100} height={100} />
-        <h1>{title}</h1>
-        <h1>{price}</h1>
+      <div className='hover:cursor-pointer mt-7 mx-4 bg-pink font-karla font-bold'>
+        <Image src={image} width={BestSellerImageSize} height={BestSellerImageSize} />
+        <div className='flex justify-between mx-3 px-2 pt-3 pb-4'>
+          <h1>{title}</h1>
+          <h1>${price - 0.1}9</h1>
+        </div>
       </div>
     </Link>
   )
 }
 
-// to get "bestseller" product data
-const getStaticProps = async () => {
-  const { data } = await axios.get('http://localhost:4000/api/products')
-  const products = data.products;
-
-  return {
-    props: {}
-  }
-}
-
-export default Home
+export default Home;
