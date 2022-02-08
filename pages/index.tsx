@@ -40,11 +40,13 @@ const Home: NextPage = () => {
       </div>
     </div>
     <h1 className='md:ml-10 md:mt-10 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
-    {BestSellerData.map((item, index) => (
-      <div key={index}>
-        <BestSellerCard title={item.title} price={item.price} image={item.image} />
-      </div>
-    ))}
+    <div className='sm:flex'>
+      {BestSellerData.map((item, index) => (
+        <div key={index}>
+          <BestSellerCard title={item.title} price={item.price} image={item.image} />
+        </div>
+      ))}
+    </div>
     </div>
     </>
   )
