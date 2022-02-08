@@ -14,6 +14,14 @@ const BestSellerData = [
     title: "Mini Wedding Box",
     price: 20,
     image: 'https://i.imgur.com/yYptDSk.jpg'
+  }, {
+    title: "Chocolate Lover's Box (Heart Box)",
+    price: 40,
+    image: 'https://i.imgur.com/TbUVpvi.jpg'
+  }, {
+    title: 'example'
+  }, {
+    title: 'exs'
   }
 ]
 
@@ -40,9 +48,9 @@ const Home: NextPage = () => {
       </div>
     </div>
     <h1 className='md:ml-10 md:mt-10 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
-    <div className='sm:flex'>
+    <div className='sm:flex flex-wrap'>
       {BestSellerData.map((item, index) => (
-        <div key={index}>
+        <div key={index} className='basis-1/2'>
           <BestSellerCard title={item.title} price={item.price} image={item.image} />
         </div>
       ))}
@@ -56,7 +64,7 @@ const Home: NextPage = () => {
 const ShopNowButton: React.FC = () => {
   return (
     <div className="relative ">
-      <img src='https://i.imgur.com/5b2t7sF.jpg' />
+      <img src='https://i.imgur.com/pxiPTue.jpg' />
     </div> 
   )
 }
@@ -74,7 +82,7 @@ const BestSellerCard: React.FC<BestSellerCardProps> = ({ title, price, image }) 
   return (
     <Link href='/products'>
       <div className='hover:cursor-pointer mt-7 mx-4 bg-pink font-karla font-bold'>
-        <Image src={image} width={BestSellerImageSize} height={BestSellerImageSize} />
+        <img src={image} />
         <div className='flex justify-between mx-3 px-2 pt-3 pb-4'>
           <h1>{title}</h1>
           <h1>${price - 0.1}9</h1>
