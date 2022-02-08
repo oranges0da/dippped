@@ -46,6 +46,9 @@ export const Navbar: React.FC = () => {
               <NavButton path='/privacy' name="Privacy Policy" />
             </li>
             <li>
+              <NavButton path='/terms' name="Terms & Conditions" />
+            </li>
+            <li>
               <NavButton path='/refunds' name="Refunds" />
             </li>
             <li>
@@ -64,6 +67,7 @@ export const Navbar: React.FC = () => {
           <MobileNavButton name='About' path='/about' />  
           <MobileNavButton name='Contact' path='/contact' />  
           <MobileNavButton name='Privacy Policy' path='/privacy' />
+          <MobileNavButton name='Terms & Conditions' path='/terms' />
           <MobileNavButton name='Refunds' path='/refunds' />
           <MobileNavButton name='FAQ' path='/faq' />
         </ul>

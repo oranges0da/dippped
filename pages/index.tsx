@@ -4,7 +4,7 @@ import Image from 'next/image'
 import NavButton from '../components/utils/NavButton'
 import axios from 'axios'
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ props }) => {
   return (
     <>
     <Head>
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
 }
 
 // overlay on image "shop now" button
-const ShopNowButton = () => {
+const ShopNowButton: React.FC = () => {
   return (
     <div className="relative ">
       <img src='https://i.imgur.com/5b2t7sF.jpg' />
@@ -42,7 +42,7 @@ const ShopNowButton = () => {
 }
 
 // bestsellers
-const BestsellerCard = ({ props }) => {
+const BestsellerCard: React.FC = () => {
   return (
     <div>
 
