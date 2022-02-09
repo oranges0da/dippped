@@ -21,7 +21,8 @@ const Product: NextPage = ({ products }: any) => {
             <ProductCard 
               title={item.name} 
               price={item.price}
-              image={item.images[0]}/>
+              image={item.images[0]}
+              showPrice={true} />
           ))}
         </div>
       </div>
