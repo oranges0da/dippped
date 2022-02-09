@@ -4,6 +4,7 @@ import Image from 'next/image'
 import NavButton from '../components/utils/NavButton'
 import axios from 'axios'
 import Link from 'next/link'
+import ProductCard from '../components/product/ProductCard'
 
 const BestSellerData = [
   {
@@ -48,10 +49,10 @@ const Home: NextPage = () => {
       </div>
     </div>
     <h1 className='md:ml-10 md:mt-10 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
-    <div className='sm:flex flex-wrap'>
+    <div className='sm:flex flex-wrap md:mx-6'>
       {BestSellerData.map((item, index) => (
         <div key={index} className='basis-1/2'>
-          <BestSellerCard title={item.title} price={item.price} image={item.image} />
+          <ProductCard title={item.title} price={item.price} image={item.image} />
         </div>
       ))}
     </div>
@@ -66,26 +67,6 @@ const ShopNowButton: React.FC = () => {
     <div className="relative ">
       <img src='https://i.imgur.com/pxiPTue.jpg' />
     </div> 
-  )
-}
-
-interface BestSellerCardProps {
-  title: string,
-  price: number,
-  image: string
-}
-
-// bestsellers
-const BestSellerCard: React.FC<BestSellerCardProps> = ({ title, price, image }) => {
-  return (
-    <Link href='/products'>
-      <div className='hover:cursor-pointer mt-8 mx-4 bg-pink font-karla font-bold rounded'>
-        <img src={image} />
-        <div className='flex justify-between mx-3 px-2 pt-4 pb-4'>
-          <h1>{title}</h1>
-        </div>
-      </div>
-    </Link>
   )
 }
 
