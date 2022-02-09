@@ -32,7 +32,7 @@ const Product: NextPage = ({ products }: any) => {
 
 export const getStaticProps = async () => {
   const { data } = await axios.get(url)
-  const products = data.products
+  const products = await data.products
   
   return {
     props: {
