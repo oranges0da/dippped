@@ -1,23 +1,39 @@
 import React from 'react'
 import axios from 'axios'
-import { useRouter } from 'next/router'
 
-const router = useRouter()
-const { id } = router.query
-
-const Product = () => {
+const Product = ({ product }) => {
   return (
     <div>
-      this is page {id}
+      {product.name}
     </div>
   )
 }
 
+// context parameter holds object containing current page id
+export const getStaticProps = async (context) => {
+  const id = context.params.id;
+  const { data: product } = await axios.get(`http://localhost:4000/api/product/${id}`)
+
+  return {
+    props: { product }
+  }
+}
+
+// get every product for each and every single product path
 export const getStaticPaths = async () => {
   const { data } = await axios.get('http://localhost/api/products')
   const products = await data.products;
 
-  return {}
+  const paths = products.map(item => {
+    return {
+      params: { id: item.id.toString() }
+    }
+  })
+
+  return {
+    paths,
+    fallback: false
+  }
 }
 
 export default Product
