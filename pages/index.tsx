@@ -52,7 +52,7 @@ const Home: NextPage = () => {
     <div className='sm:flex flex-wrap md:mx-6'>
       {BestSellerData.map((item, index) => (
         <div key={index} className='basis-1/2'>
-          <ProductCard title={item.title} price={item.price} image={item.image} showPrice={false} />
+          <ProductCard id={6} title={item.title} price={item.price} image={item.image} showPrice={false} />
         </div>
       ))}
     </div>

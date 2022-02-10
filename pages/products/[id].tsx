@@ -1,11 +1,16 @@
 import React from 'react'
 import axios from 'axios'
+import Link from 'next/link'
+import ProductCard from '../../components/product/ProductCard'
 
 const Product = ({ product }) => {
   return (
-    <div>
-      {product.name}
-    </div>
+    <Link href={`/products/${product.id}`}>
+      <div>
+        {product.name}
+        <img src={product.images[0]} />
+      </div>
+    </Link>
   )
 }
 
