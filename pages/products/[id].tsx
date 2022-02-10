@@ -5,12 +5,11 @@ import ProductCard from '../../components/product/ProductCard'
 
 const Product = ({ product }) => {
   return (
-    <Link href={`/products/${product.id}`}>
-      <div>
-        {product.name}
-        <img src={product.images[0]} />
-      </div>
-    </Link>
+    <div>
+      {product.id}
+      {product.name}
+      <img src={product.images[0]} />
+    </div>
   )
 }
 

@@ -8,18 +8,22 @@ import ProductCard from '../components/product/ProductCard'
 
 const BestSellerData = [
   {
+    id: 6,
     title: "Valentine's Day Box",
     price: 40,
     image: 'https://i.imgur.com/mpfO7bt.jpg'
   }, {
+    id: undefined,
     title: "Mini Wedding Box",
     price: 20,
     image: 'https://i.imgur.com/yYptDSk.jpg'
   }, {
+    id: undefined,
     title: "Chocolate Lover's Box (Heart Box)",
     price: 40,
     image: 'https://i.imgur.com/TbUVpvi.jpg'
   }, {
+    id: undefined,
     title: "Wedding Box",
     price: 30,
     image: 'https://i.imgur.com/ALiZFnz.jpg'
@@ -52,7 +56,7 @@ const Home: NextPage = () => {
     <div className='sm:flex flex-wrap md:mx-6'>
       {BestSellerData.map((item, index) => (
         <div key={index} className='basis-1/2'>
-          <ProductCard id={6} title={item.title} price={item.price} image={item.image} showPrice={false} />
+          <ProductCard id={item.id} title={item.title} price={item.price} image={item.image} showPrice={false} />
         </div>
       ))}
     </div>

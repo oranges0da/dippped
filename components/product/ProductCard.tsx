@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 interface ProductCardProps {
-  id: number,
+  id: number | undefined,
   title: string,
   price: number,
   image: string,
