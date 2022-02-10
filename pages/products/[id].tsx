@@ -4,7 +4,7 @@ import axios from 'axios'
 const Product = ({ product }) => {
   return (
     <div>
-      hi 
+      {product.name}
     </div>
   )
 }
@@ -21,7 +21,7 @@ export const getStaticProps = async (context) => {
 
 // get every product for each and every single product path
 export const getStaticPaths = async () => {
-  const { data } = await axios.get('http://localhost/api/products')
+  const { data } = await axios.get('http://localhost:4000/api/products')
   const products = await data.products;
 
   const paths = products.map(item => {
