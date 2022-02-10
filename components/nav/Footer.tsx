@@ -1,29 +1,29 @@
 import React from 'react'
-import NavButton from '../utils/NavButton'
-import LogoIcon from '../utils/LogoIcon'
+import Image from 'next/image'
 
 const Footer: React.FC = () => {
   return (
     <div className='border-t border-gray my-6 font-karla text-sm'>
       <div className='flex md:justify-end justify-center mr-5 my-14'>
-        <LogoIcon source='https://i.imgur.com/fo9OVTB.png' size={32} path='/' />
-        <LogoIcon source='https://i.imgur.com/buM9fEc.png' size={29} path='/' />
-        <LogoIcon source='https://i.imgur.com/E5t7hMe.png' size={30} path='/' />
+        <FooterButton source='https://i.imgur.com/fo9OVTB.png' size={38} path='https://www.facebook.com' />
+        <FooterButton source='https://i.imgur.com/buM9fEc.png' size={35} path='https://www.tiktok.com' />
+        <FooterButton source='https://i.imgur.com/E5t7hMe.png' size={36} path='https://www.instagram.com' />
       </div>
     </div>
   )
 }
 
 interface FooterButtonProps {
-  name: string;
+  source: string;
   path: string;
+  size: number;
 }
 
-const FooterButton: React.FC<FooterButtonProps> = ({ name, path }) => {
+const FooterButton: React.FC<FooterButtonProps> = ({ source, path, size }) => {
   return (
-    <li className='mr-8 my-7 md:ml-2 ml-7'>
-      <NavButton path={path} name={name} />
-    </li>
+    <a href={path} className='mx-2 sm:hover:scale-110' rel="noopener noreferrer">
+      <Image src={source} height={size} width={size} />
+    </a>
   )
 }
 
