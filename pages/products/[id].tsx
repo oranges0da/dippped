@@ -4,7 +4,7 @@ import axios from 'axios'
 const Product = ({ product }) => {
   return (
     <div>
-      {product.name}
+      hi 
     </div>
   )
 }
@@ -32,7 +32,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }
 
