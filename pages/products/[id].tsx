@@ -2,14 +2,26 @@ import React from 'react'
 import axios from 'axios'
 import Link from 'next/link'
 import ProductCard from '../../components/product/ProductCard'
+import Head from 'next/head'
 
 const Product = ({ product }) => {
   return (
-    <div>
-      {product.id}
-      {product.name}
-      <img src={product.images[0]} />
-    </div>
+    <>
+      <Head>
+        <title>{product.name} - Dipped </title>
+      </Head>
+      <div>
+        {product.id}
+        {product.name}
+        {product.desc}
+        {product.disclaimer && <h1>{product.disclaimer}</h1>}
+        {product["images"].map((item, index) => (
+          <div className='m-20 sm:flex flex-wrap'>
+            <img src={item} className='basis-1/3' />
+          </div>
+        ))}
+      </div>
+    </>
   )
 }
 

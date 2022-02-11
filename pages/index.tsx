@@ -13,21 +13,11 @@ const BestSellerData = [
     price: 40,
     image: 'https://i.imgur.com/mpfO7bt.jpg'
   }, {
-    id: undefined,
+    id: 8,
     title: "Mini Wedding Box",
     price: 20,
     image: 'https://i.imgur.com/yYptDSk.jpg'
-  }, {
-    id: undefined,
-    title: "Chocolate Lover's Box (Heart Box)",
-    price: 40,
-    image: 'https://i.imgur.com/TbUVpvi.jpg'
-  }, {
-    id: undefined,
-    title: "Wedding Box",
-    price: 30,
-    image: 'https://i.imgur.com/ALiZFnz.jpg'
-  }
+  },
 ]
 
 const Home: NextPage = () => {
