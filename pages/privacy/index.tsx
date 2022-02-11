@@ -4,7 +4,7 @@ import React from 'react'
 const Privacy: NextPage = () => {
   return (
     <div>
-      privacy policy page
+      <h1>Privacy Policy</h1>
     </div>
   )
 }
