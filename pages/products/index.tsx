@@ -16,14 +16,16 @@ const Product: NextPage = ({ products }: any) => {
       <div className='font-karla'>
         <h1 className='ml-5 mt-10 text-4xl font-ubuntu'>Shop</h1>
         <h2 className='ml-5 my-5'>Our Catalogue of Products.</h2>
-        <div className='flex-wrap'>
+        <div className='sm:flex flex-wrap'>
           {products.map(item => (
-            <ProductCard
-              id={item.id}
-              title={item.name} 
-              price={item.price}
-              image={item.images[0]}
-              showPrice={true} />
+            <div className='basis-1/2'>
+              <ProductCard
+                id={item.id}
+                title={item.name} 
+                price={item.price}
+                image={item.images[0]}
+                showPrice={true} />
+            </div>
           ))}
         </div>
       </div>
