@@ -14,7 +14,6 @@ const Product = ({ product }) => {
         {product.id}
         {product.name}
         {product.desc}
-        {product.disclaimer && <h1>{product.disclaimer}</h1>}
         {product["images"].map((item, index) => (
           <div className='m-20 sm:flex flex-wrap'>
             <img src={item} className='basis-1/3' />
