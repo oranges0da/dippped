@@ -8,15 +8,13 @@ import ProductCard from '../components/product/ProductCard'
 
 const BestSellerData = [
   {
-    id: 6,
+    id: 1,
     title: "Valentine's Day Box",
-    price: 40,
     image: 'https://i.imgur.com/mpfO7bt.jpg'
   }, {
-    id: 8,
-    title: "Mini Wedding Box",
-    price: 20,
-    image: 'https://i.imgur.com/yYptDSk.jpg'
+    id: 2,
+    title: "White Chocolate Box",
+    image: 'https://i.imgur.com/27Js6h4.jpg'
   },
 ]
 
