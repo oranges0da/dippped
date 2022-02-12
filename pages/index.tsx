@@ -1,9 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import NavButton from '../components/utils/NavButton'
-import axios from 'axios'
-import Link from 'next/link'
 import ProductCard from '../components/product/ProductCard'
 
 const BestSellerData = [
@@ -44,7 +40,7 @@ const Home: NextPage = () => {
     <div className='sm:flex flex-wrap md:mx-6'>
       {BestSellerData.map((item, index) => (
         <div key={index} className='basis-1/2'>
-          <ProductCard id={item.id} title={item.title} price={item.price} image={item.image} showPrice={false} />
+          <ProductCard id={item.id} title={item.title} price={1} image={item.image} showPrice={false} />
         </div>
       ))}
     </div>
