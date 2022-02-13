@@ -2,8 +2,12 @@ import React, { createContext, useState, FC } from "react";
 import { ProductType, CartContextState } from "./types";
 
 const contextDefaultValues: CartContextState = {
-  products: [],
-  addProduct: () => {}
+  products: [{
+    id: undefined,
+    name: null,
+    price: undefined
+  }],
+  addProduct: (id: number, name: string, price: number) => {}
 };
 
 export const CartContext = createContext<CartContextState>(
@@ -13,7 +17,7 @@ export const CartContext = createContext<CartContextState>(
 export const CartProvider: FC = ({ children }) => {
   const [products, setProducts] = useState<ProductType[]>(contextDefaultValues.products);
 
-  const addProduct = (id: number, name: string, price: number) => setProducts((products) => [...products, { id, name, price }]);
+  const addProduct = (id: number, name: string, price: number) => setProducts([...products, { id, name, price }]);
 
   return (
     <CartContext.Provider

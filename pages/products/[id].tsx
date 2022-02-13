@@ -3,7 +3,7 @@ import axios from 'axios'
 import Link from 'next/link'
 import ProductCard from '../../components/product/ProductCard'
 import Head from 'next/head'
-import { CartContext, CartProvider } from '../../context/cart/CartContext'
+import { CartContext, CartProvider } from '../../context/CartContext'
 
 const Product = ({ product }) => {
   const { products, addProduct } = useContext(CartContext)
@@ -24,7 +24,7 @@ const Product = ({ product }) => {
         ))}
       </div>
       <div>
-        <button className='border' onClick={() => {addProduct(id: product.id, name: product.name, price: product.name)}}>Add to Cart</button>
+        <button className='border' onClick={() => addProduct(product.id, product.name, product.price)}>add to card</button>
       </div>
     </>
   )
