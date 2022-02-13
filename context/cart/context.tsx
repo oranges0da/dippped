@@ -15,7 +15,7 @@ const initialState = {
   products: [],
 }
 
-const AppContext = createContext<{
+const CartContext = createContext<{
   state: InitialStateType;
   dispatch: React.Dispatch<any>;
 }>({
@@ -23,14 +23,14 @@ const AppContext = createContext<{
   dispatch: () => null
 });
 
-const AppProvider: React.FC = ({ children }) => {
+const CartProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
 
   return (
-    <AppContext.Provider value={{state, dispatch}}>
+    <CartContext.Provider value={{state, dispatch}}>
       {children}
-    </AppContext.Provider>
+    </CartContext.Provider>
   )
 }
 
-export { AppContext, AppProvider };
+export { CartContext, CartProvider };

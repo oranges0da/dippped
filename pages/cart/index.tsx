@@ -1,10 +1,13 @@
 import { NextPage } from 'next'
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContext } from '../../context/cart/context'
 
 const Cart: NextPage = () => {
+  const { state, dispatch } = useContext(CartContext)
+
   return (
     <div>
-      cart page
+      {state.products}
     </div>
   )
 }
