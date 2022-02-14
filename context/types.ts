@@ -1,3 +1,5 @@
+import React from "react";
+
 export type ProductType = {
   id: number | null | undefined,
   name: string | null | undefined,
@@ -5,6 +7,6 @@ export type ProductType = {
 }
 
 export type CartContextState = {
-  products: ProductType[];
-  addProduct: (id: number, name: string, price: number) => void;
+  products: ProductType[] | any;
+  addProduct: React.Dispatch<any>
 };

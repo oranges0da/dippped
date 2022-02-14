@@ -1,27 +1,24 @@
-import React, { createContext, useState, FC } from "react";
-import { ProductType, CartContextState } from "./types";
+import React, { createContext, useState, FC, useReducer } from "react";
+import { ProductType, InitialStateType } from "./types";
+import { cartReducer } from "./CartReducer";
 
-const contextDefaultValues: CartContextState = {
-  products: [],
-  addProduct: (id: number, name: string, price: number) => {}
-};
+const initialState = {
+  products: []
+}
 
-export const CartContext = createContext<CartContextState>(
-  contextDefaultValues
+export const CartContext = createContext<{
+  state: InitialStateType,
+  dispatch: React.Dispatch<any>
+}>(
+  state: initialState,
+  dispatch: () => null
 );
 
 export const CartProvider: FC = ({ children }) => {
-  const [products, setProducts] = useState<ProductType[]>(contextDefaultValues.products);
-
-  const addProduct = (id: number, name: string, price: number) => setProducts([...products, { id, name, price }]);
+  const [state, dispatch] = useReducer(cartReducer, initialState)
 
   return (
-    <CartContext.Provider
-      value={{
-        products,
-        addProduct
-      }}
-    >
+    <CartContext.Provider value={{ state, dispatch }}>
       {children}
     </CartContext.Provider>
   );
