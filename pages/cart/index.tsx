@@ -10,7 +10,9 @@ const Cart: NextPage = () => {
   return (
     <CartProvider>
       <div>
-        {products[0].name}
+        {products.map(item => (
+          <h1>{item.name}</h1>
+        ))}
       </div>
     </CartProvider>
   )

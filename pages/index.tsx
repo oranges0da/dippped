@@ -11,7 +11,15 @@ const BestSellerData = [
     id: 2,
     title: "White Chocolate Box",
     image: 'https://i.imgur.com/27Js6h4.jpg'
-  },
+  }, {
+    id: 5,
+    title: "Chocolate Lover's Box",
+    image: 'https://i.imgur.com/87XyYFa.jpg'
+  }, {
+    id: 4,
+    title: "Wedding Box",
+    image: 'https://i.imgur.com/ALiZFnz.jpg'
+  }
 ]
 
 const Home: NextPage = () => {

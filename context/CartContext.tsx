@@ -2,11 +2,7 @@ import React, { createContext, useState, FC } from "react";
 import { ProductType, CartContextState } from "./types";
 
 const contextDefaultValues: CartContextState = {
-  products: [{
-    id: undefined,
-    name: null,
-    price: undefined
-  }],
+  products: [],
   addProduct: (id: number, name: string, price: number) => {}
 };
 

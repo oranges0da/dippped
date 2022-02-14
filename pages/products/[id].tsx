@@ -1,31 +1,32 @@
 import React, { useContext } from 'react'
 import axios from 'axios'
-import Link from 'next/link'
-import ProductCard from '../../components/product/ProductCard'
 import Head from 'next/head'
 import { CartContext, CartProvider } from '../../context/CartContext'
 
 const Product = ({ product }) => {
   const { products, addProduct } = useContext(CartContext)
 
+  const handleAddCart = () => {
+    addProduct(product.id, product.name, product.price)
+    console.log(`Added to cart. Item: ${product.name}`)
+  }
+
   return (
     <>
       <Head>
         <title>{product.name} - Dipped </title>
       </Head>
-      <div>
-        {product.id}
-        {product.name}
-        {product.desc}
-        {product["images"].map((item, index) => (
-          <div className='m-20 sm:flex flex-wrap'>
-            <img src={item} className='basis-1/3' />
-          </div>
-        ))}
-      </div>
-      <div>
-        <button className='border' onClick={() => addProduct(product.id, product.name, product.price)}>add to card</button>
-      </div>
+      <CartProvider>
+        <div>
+          {product.id}
+          {product.name}
+          {product.desc}
+          <img src={product.images[0]} />
+        </div>
+        <div>
+          <button className='border' onClick={() => handleAddCart()}>add to cart</button>
+        </div>
+      </CartProvider>
     </>
   )
 }
