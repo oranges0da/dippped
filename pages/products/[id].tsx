@@ -1,8 +1,12 @@
 import React, { useContext } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
+import { useRecoilState } from 'recoil'
+import cartAtom from '../../state/atoms'
 
 const Product = ({ product }) => {
+  const [cartItem, setCartItem] = useRecoilState(cartAtom)
+  
   return (
     <>
       <Head>
