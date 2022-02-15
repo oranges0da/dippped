@@ -14,6 +14,7 @@ const Product = ({ product }) => {
         id: product.id,
         name: product.name,
         price: product.price,
+        size: 'large',
         quantity: 1,
         images: product.images
       }
