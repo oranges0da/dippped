@@ -1,20 +1,22 @@
 import React from 'react'
+import Head from 'next/head'
 
 interface CartItemProps {
   id: number,
   name: string,
   price: number,
-  images: string[]
 }
 
-const CartItem: React.FC<CartItemProps> = ({ id, name, price, images }) => {
+const CartItem: React.FC<CartItemProps> = ({ id, name, price }) => {
   return (
-    <div>
-      <h1>{id}</h1>
-      <h1>{name}</h1>
-      <h1>{price}</h1>
-      <img src={images[0]} />
-    </div>
+    <>
+      <Head>
+        <title>Cart - Dippped</title>
+      </Head>
+      <div>
+
+      </div>
+    </>
   )
 }
 

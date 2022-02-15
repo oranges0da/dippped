@@ -3,6 +3,7 @@ import axios from 'axios'
 import Head from 'next/head'
 import { useRecoilState } from 'recoil'
 import cartAtom from '../../state/atoms'
+import MainProductCard from '../../components/product/MainProductCard'
 
 const Product = ({ product }) => {
   const [cartItem, setCartItem] = useRecoilState(cartAtom)
@@ -22,15 +23,7 @@ const Product = ({ product }) => {
       <Head>
         <title>{product.name} - Dipped </title>
       </Head>
-      <div>
-        {product.id}
-        {product.name}
-        {product.desc}
-        <img src={product.images[0]} />
-      </div>
-      <div>
-        <button className='border' onClick={() => handleAddCart()}>Add to Cart</button>
-      </div>
+      <MainProductCard product={product} />
     </>
   )
 }
