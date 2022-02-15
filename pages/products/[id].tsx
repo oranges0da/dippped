@@ -13,7 +13,9 @@ const Product = ({ product }) => {
       ...oldCartItems, {
         id: product.id,
         name: product.name,
-        price: product.price
+        price: product.price,
+        quantity: 1,
+        images: product.images
       }
     ])
   }
@@ -23,7 +25,9 @@ const Product = ({ product }) => {
       <Head>
         <title>{product.name} - Dipped </title>
       </Head>
-      <MainProductCard product={product} />
+      <div>
+        <MainProductCard product={product} />
+      </div>
     </>
   )
 }
