@@ -9,8 +9,6 @@ const Cart: NextPage = () => {
   return (
     <div>
       cart
-      {cartItems[0].price}
-      {console.log(cartItems)}
     </div>
   )
 }
