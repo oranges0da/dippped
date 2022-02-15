@@ -11,9 +11,7 @@ export interface CartItem {
 
 const cartAtom = atom({
   key: 'cart',
-  default: [{
-    quantity: 1
-  }] as CartItem[]
+  default: [] as CartItem[]
 })
 
 export default cartAtom
