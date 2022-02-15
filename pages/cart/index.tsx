@@ -3,14 +3,14 @@ import React, { useContext } from 'react'
 import { CartContext, CartProvider } from '../../context/CartContext'
 
 const Cart: NextPage = () => {
-  const { products, addProduct } = useContext(CartContext)
+  const { state, dispatch } = useContext(CartContext)
 
-  console.log(products)
+  console.log(state)
 
   return (
     <CartProvider>
       <div>
-        {products.map(item => (
+        {state.map(item => (
           <h1>{item.name}</h1>
         ))}
       </div>
