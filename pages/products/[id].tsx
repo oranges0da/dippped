@@ -6,7 +6,17 @@ import cartAtom from '../../state/atoms'
 
 const Product = ({ product }) => {
   const [cartItem, setCartItem] = useRecoilState(cartAtom)
-  
+
+  const handleAddCart = () => {
+    setCartItem(oldCartItems => [
+      ...oldCartItems, {
+        id: product.id,
+        name: product.name,
+        price: product.price
+      }
+    ])
+  }
+
   return (
     <>
       <Head>
@@ -19,6 +29,7 @@ const Product = ({ product }) => {
         <img src={product.images[0]} />
       </div>
       <div>
+        <button className='border' onClick={() => handleAddCart()}>Add to Cart</button>
       </div>
     </>
   )

@@ -6,7 +6,7 @@ export interface CartItem {
   price: number
 }
 
-const cartAtom = ({
+const cartAtom = atom({
   key: 'cart',
   default: [] as CartItem[]
 })
