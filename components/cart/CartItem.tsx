@@ -1,5 +1,6 @@
 import React from 'react'
-import Head from 'next/head'
+import { useRecoilState } from 'recoil'
+import cartAtom from '../../state/atoms'
 
 interface CartItemProps {
   id: number,
@@ -8,10 +9,17 @@ interface CartItemProps {
 }
 
 const CartItem: React.FC<CartItemProps> = ({ id, name, price }) => {
+  const [cartItems, setCartItems] = useRecoilState(cartAtom)
+
+  const handleDelete = () => {
+
+  }
+
   return (
     <div>
       <h1>{name}</h1>
       <h1>{price}</h1>
+      <button className='border border-gray my-5'>Delete</button>
     </div>
   )
 }
