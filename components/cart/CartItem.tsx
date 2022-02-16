@@ -10,7 +10,8 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = ({ id, name, price }) => {
   return (
     <div>
-      
+      <h1>{name}</h1>
+      <h1>{price}</h1>
     </div>
   )
 }

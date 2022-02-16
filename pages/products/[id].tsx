@@ -32,6 +32,7 @@ const Product = ({ product }) => {
         images: product.images
       }
     ])
+    console.log(cartItem)
   }
 
   return (
@@ -51,7 +52,7 @@ const Product = ({ product }) => {
                 <div className="w-full max-w-lg mx-auto sm:mt-8 md:ml-14 md:w-1/2 justify-between text-3xl">
                     <h1>{product.name}</h1>
                     <h2 className='text-sm my-2'>{product.desc}</h2>
-                    <span className="mt-3">${product.price}.00</span>
+                    <h1 className="my-4">${product.price}.00</h1>
                     <div className="mt-2">
                         <div className="flex items-center mt-1">
                             <button onClick={() => {decreaseQuantity()}}>
@@ -63,8 +64,11 @@ const Product = ({ product }) => {
                             </button>
                         </div>
                     </div>
-                    <div className='text-center'>
-                      <button className='hover:cursor-pointer'>Add to Cart</button>
+                    <div className='text-center bg-black rounded-3xl mt-5'>
+                      <button 
+                        className='hover:cursor-pointer text-white py-2'
+                        onClick={() => handleAddCart()}
+                      >Add to Cart</button>
                     </div>
                 </div>
             </div>
