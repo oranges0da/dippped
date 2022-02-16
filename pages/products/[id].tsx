@@ -45,21 +45,21 @@ const Product = ({ product }) => {
             <div className="md:flex">
                 <div className="w-full">
                   {product["images"].map((item, index) => (
-                    <img src={item} />
+                    <img src={item} className='my-10 sm:ml-10 rounded-sm'/>
                   ))}
                 </div>
-                <div className="w-full max-w-lg mx-auto mt-5 md:ml-8 md:mt-0 md:w-1/2">
+                <div className="w-full max-w-lg mx-auto sm:mt-8 md:ml-14 md:w-1/2 justify-between text-3xl">
                     <h1>{product.name}</h1>
                     <h2 className='text-sm my-2'>{product.desc}</h2>
                     <span className="mt-3">${product.price}.00</span>
                     <div className="mt-2">
                         <div className="flex items-center mt-1">
                             <button onClick={() => {decreaseQuantity()}}>
-                              <svg className="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                              <svg className="h-8 w-8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </button>
                             <h1 className='mx-2'>{quantity}</h1>
                             <button onClick={() => {increaseQuantity()}}>
-                                <svg className="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <svg className="h-8 w-8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </button>
                         </div>
                     </div>
