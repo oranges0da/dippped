@@ -15,7 +15,7 @@ const Cart: NextPage = () => {
       </Head>
       <div>
         {cartItems.map((item, index) => (
-          <CartItem id={item.id} name={item.name} price={item.price} />
+          <CartItem id={item.id} name={item.name} price={item.price} quantity={item.quantity}/>
         ))}
       </div>
     </>

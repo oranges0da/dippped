@@ -21,7 +21,8 @@ const Product = ({ product }) => {
     }
   }
 
-  const handleAddCart = () => {
+  // add current product to cart
+  const addCart = () => {
     setCartItem(oldCartItems => [
       ...oldCartItems, {
         id: product.id,
@@ -32,7 +33,15 @@ const Product = ({ product }) => {
         images: product.images
       }
     ])
-    console.log(cartItem)
+  }
+
+  // main add to cart checker and function
+  const handleAddCart = () => {
+    if (cartItem.includes(product.name)) {
+      setQuantity(quantity => quantity += 1) // if cart already contains product, only update quantity
+    } else { // if cart does not contain then add the main product object
+      addCart()
+    }
   }
 
   return (
