@@ -3,10 +3,9 @@ import axios from 'axios'
 import Head from 'next/head'
 import { useRecoilState } from 'recoil'
 import cartAtom from '../../state/atoms'
-import Image from 'next/image'
 
 const Product = ({ product }) => {
-  const [cartItem, setCartItem] = useRecoilState(cartAtom)
+  const [cartItems, setCartItem] = useRecoilState(cartAtom)
   const [quantity, setQuantity] = useState(1)
 
   const decreaseQuantity = () => {
@@ -37,10 +36,12 @@ const Product = ({ product }) => {
 
   // main add to cart checker and function
   const handleAddCart = () => {
-    if (cartItem.includes(product.name)) {
+    if (cartItems.includes(product.name)) {
       setQuantity(quantity => quantity += 1) // if cart already contains product, only update quantity
     } else { // if cart does not contain then add the main product object
       addCart()
+      console.log(cartItems)
+      alert(`${cartItems[0].name} was added to cart.`)
     }
   }
 
