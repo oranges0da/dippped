@@ -6,7 +6,6 @@ import cartAtom from '../../state/atoms'
 
 const Product = ({ product }) => {
   const [cartItems, setCartItems] = useRecoilState(cartAtom)
-  // TODO: make quantity work in CartItem component and not delete every instance
   const [quantity, setQuantity] = useState(1)
 
   const decreaseQuantity = () => {
@@ -23,21 +22,15 @@ const Product = ({ product }) => {
 
   // add current product to cart
   const addCart = () => {
-    const found = cartItems.find(element => element.name === product.name)
-
-    if (found) { // if instance of product is already in cart
-      setQuantity(q => q += 1)
-    } else { // if it is not already in cart
-      setCartItems(oldCartItems => [
-        ...oldCartItems, {
-          id: product.id,
-          name: product.name,
-          size: 'large',
-          quantity,
-          images: product.images
-        }
-      ])
-    }
+    setCartItems(oldCartItems => [
+      ...oldCartItems, {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        quantity,
+        images: product.images
+      }
+    ])
   }
 
   // main add to cart checker and function

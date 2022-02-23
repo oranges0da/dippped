@@ -8,6 +8,8 @@ import Head from 'next/head'
 const Cart: NextPage = () => {
   const cartItems = useRecoilValue(cartAtom)
 
+  const filteredCartItems = [...new Set(cartItems)]
+
   return (
     <>
       <Head>

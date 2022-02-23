@@ -7,9 +7,10 @@ interface CartItemProps {
   name: string,
   price: number,
   quantity: number,
+  size: string,
 }
 
-const CartItem: React.FC<CartItemProps> = ({ id, name, price, quantity }) => {
+const CartItem: React.FC<CartItemProps> = ({ id, name, price, quantity, size }) => {
   const [cartItems, setCartItems] = useRecoilState(cartAtom)
 
   const handleDelete = () => {
@@ -23,6 +24,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, name, price, quantity }) => {
       <h1>{name}</h1>
       <h1>{price * quantity}</h1>
       <h1>{quantity}</h1>
+      <h1>{size}</h1>
       <button 
         className='border border-gray my-5'
         onClick={() => handleDelete()}
