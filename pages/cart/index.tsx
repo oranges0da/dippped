@@ -8,16 +8,14 @@ import Head from 'next/head'
 const Cart: NextPage = () => {
   const cartItems = useRecoilValue(cartAtom)
 
-  const filteredCartItems = [...new Set(cartItems)]
-
   return (
     <>
       <Head>
         <title>Cart - Dippped</title>
       </Head>
       <div>
-        {cartItems.map((item, index) => (
-          <CartItem id={item.id} name={item.name} price={item.price} quantity={item.quantity}/>
+        {cartItems.map(item => (
+          <CartItem id={item.id} name={item.name} price={item.price} quantity={item.quantity} />
         ))}
       </div>
     </>

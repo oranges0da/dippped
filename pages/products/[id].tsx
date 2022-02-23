@@ -20,7 +20,7 @@ const Product = ({ product }) => {
     }
   }
 
-  // add current product to cart
+  // add current product to cart, only successful if product is not already in cart
   const addCart = () => {
     setCartItems(oldCartItems => [
       ...oldCartItems, {
@@ -31,15 +31,20 @@ const Product = ({ product }) => {
         images: product.images
       }
     ])
+
+    setQuantity(1)
   }
 
-  // main add to cart checker and function
   const handleAddCart = () => {
-    if (cartItems.includes(product.name)) {
-      setQuantity(quantity => quantity += 1) // if cart already contains product, only update quantity
-    } else { // if cart does not contain then add the main product object
+    const found = cartItems.find(item => item.id === product.id)
+    console.log(found)
+
+    if (found) {
+      
+      console.log('Already found')
+
+    } else {
       addCart()
-      alert(`${product.name} was added to cart.`)
     }
   }
 
