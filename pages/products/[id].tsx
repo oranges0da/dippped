@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
-import { useRecoilState } from 'recoil'
-import cartAtom from '../../state/atoms'
 
 const Product = ({ product }) => {
-  const [cartItems, setCartItems] = useRecoilState(cartAtom)
   const [quantity, setQuantity] = useState(1)
 
   const decreaseQuantity = () => {
@@ -17,34 +14,6 @@ const Product = ({ product }) => {
   const increaseQuantity = () => {
     if (quantity < 10) {
       setQuantity(quantity => quantity += 1)
-    }
-  }
-
-  // add current product to cart, only successful if product is not already in cart
-  const addCart = () => {
-    setCartItems(oldCartItems => [
-      ...oldCartItems, {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        quantity,
-        images: product.images
-      }
-    ])
-
-    setQuantity(1)
-  }
-
-  const handleAddCart = () => {
-    const found = cartItems.find(item => item.id === product.id)
-    console.log(found)
-
-    if (found) {
-      
-      console.log('Already found')
-
-    } else {
-      addCart()
     }
   }
 
@@ -80,7 +49,6 @@ const Product = ({ product }) => {
                     <div className='text-center bg-black rounded-3xl mt-5'>
                       <button 
                         className='hover:cursor-pointer text-white py-2'
-                        onClick={() => handleAddCart()}
                       >Add to Cart</button>
                     </div>
                 </div>
