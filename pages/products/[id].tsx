@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
+import cartAtom from '../../state/atoms'
+import { useRecoilState } from 'recoil'
 
 const Product = ({ product }) => {
+  const [cartItems, setCartItems] = useRecoilState(cartAtom)
   const [quantity, setQuantity] = useState(1)
 
   const decreaseQuantity = () => {
@@ -23,6 +26,7 @@ const Product = ({ product }) => {
         <title>{product.name} - Dipped </title>
       </Head>
       <div>
+        {console.log(cartItems)}
         <main className="my-8 font-karla text-lg">
         <div className="px-6">
             <div className="md:flex">
