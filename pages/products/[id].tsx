@@ -20,6 +20,18 @@ const Product = ({ product }) => {
     }
   }
 
+  const addCart = () => {
+    setCartItems(oldCartItems => [
+      ...oldCartItems, {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        quantity,
+        images: product.images
+      }
+    ])
+  }
+
   return (
     <>
       <Head>
@@ -53,6 +65,7 @@ const Product = ({ product }) => {
                     <div className='text-center bg-black rounded-3xl mt-5'>
                       <button 
                         className='hover:cursor-pointer text-white py-2'
+                        onClick={() => addCart()}
                       >Add to Cart</button>
                     </div>
                 </div>
