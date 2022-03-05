@@ -22,8 +22,8 @@ const CartItem: React.FC<CartItemProps> = ({ id, name, price, quantity }) => {
     <div>
       <h1>{id}</h1>
       <h1>{name}</h1>
-      <h1>{price * quantity}</h1>
-      <h1>{quantity}</h1>
+      <h1>${price * quantity}.00</h1>
+      <h1>Quantity: {quantity}</h1>
       <button 
         className='border border-gray my-5'
         onClick={() => handleDelete()}

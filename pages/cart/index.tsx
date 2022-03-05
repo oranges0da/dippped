@@ -7,15 +7,11 @@ import Head from 'next/head'
 
 const Cart: NextPage = () => {
   const cartItems = useRecoilValue(cartAtom)
+  
+  const arr = [...new Set(cartItems)]
 
-  const count = {};
-
-  cartItems.forEach(element => {
-    count[element.name] = (count[element.name] || 0) + 1;
-  });
-
-  console.log(count)
   console.log(cartItems)
+  console.log(arr)
 
   return (
     <>
@@ -23,6 +19,9 @@ const Cart: NextPage = () => {
         <title>Cart - Dippped</title>
       </Head>
       <div>
+        {cartItems.map(item => (
+          <CartItem id={item.id} name={item.name} price={item.price} quantity={item.quantity} />
+        ))}
       </div>
     </>
   )

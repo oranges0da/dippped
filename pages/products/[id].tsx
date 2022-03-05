@@ -32,6 +32,17 @@ const Product = ({ product }) => {
     ])
   }
 
+  const handleAddCart= () => {
+    const found = cartItems.find(item => item.id === product.id)
+
+    if (!found) {
+      addCart()
+    } else {
+      console.log("Item already in cart.")
+      alert(`${product.name} already in cart.`)
+    }
+  }
+
   return (
     <>
       <Head>
@@ -43,9 +54,7 @@ const Product = ({ product }) => {
         <div className="px-6">
             <div className="md:flex">
                 <div className="w-full">
-                  {product["images"].map((item, index) => (
-                    <img src={item} className='my-10 sm:ml-10 rounded-sm'/>
-                  ))}
+                  <img src={product.images[0]} />
                 </div>
                 <div className="w-full max-w-lg mx-auto sm:mt-8 md:ml-14 md:w-1/2 justify-between text-3xl">
                     <h1>{product.name}</h1>
@@ -65,7 +74,7 @@ const Product = ({ product }) => {
                     <div className='text-center bg-black rounded-3xl mt-5'>
                       <button 
                         className='hover:cursor-pointer text-white py-2'
-                        onClick={() => addCart()}
+                        onClick={() => handleAddCart()}
                       >Add to Cart</button>
                     </div>
                 </div>
