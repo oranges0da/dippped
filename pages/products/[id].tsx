@@ -32,17 +32,6 @@ const Product = ({ product }) => {
     ])
   }
 
-  const handleAddCart= () => {
-    const found = cartItems.find(item => item.id === product.id)
-
-    if (!found) {
-      addCart()
-    } else {
-      console.log("Item already in cart.")
-      alert(`${product.name} already in cart.`)
-    }
-  }
-
   return (
     <>
       <Head>
@@ -74,7 +63,7 @@ const Product = ({ product }) => {
                     <div className='text-center bg-black rounded-3xl mt-5'>
                       <button 
                         className='hover:cursor-pointer text-white py-2'
-                        onClick={() => handleAddCart()}
+                        onClick={() => addCart()}
                       >Add to Cart</button>
                     </div>
                 </div>
