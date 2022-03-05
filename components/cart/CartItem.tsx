@@ -6,10 +6,10 @@ interface CartItemProps {
   id: number,
   name: string,
   price: number,
-  quantity: number,
+  image: string
 }
 
-const CartItem: React.FC<CartItemProps> = ({ id, name, price, quantity }) => {
+const CartItem: React.FC<CartItemProps> = ({ id, name, price, image }) => {
   const [cartItems, setCartItems] = useRecoilState(cartAtom)
 
   const handleDelete = () => {
@@ -22,8 +22,8 @@ const CartItem: React.FC<CartItemProps> = ({ id, name, price, quantity }) => {
     <div>
       <h1>{id}</h1>
       <h1>{name}</h1>
-      <h1>${price * quantity}.00</h1>
-      <h1>Quantity: {quantity}</h1>
+      <h1>${price}.00</h1>
+      <img src={image} />
       <button 
         className='border border-gray my-5'
         onClick={() => handleDelete()}

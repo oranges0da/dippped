@@ -21,15 +21,20 @@ const Product = ({ product }) => {
   }
 
   const addCart = () => {
-    setCartItems(oldCartItems => [
-      ...oldCartItems, {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        quantity,
-        images: product.images
-      }
-    ])
+    const found = cartItems.find(item => item.id === product.id)
+
+    if (!found) {
+      setCartItems(oldCartItems => [
+        ...oldCartItems, {
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          images: product.images
+        }
+      ])
+    } else {
+      alert(`The ${product.name} is already in your cart. For large orders or catering, please contact example@info.com`)
+    }
   }
 
   return (
