@@ -26,7 +26,7 @@ const Home: NextPage = () => {
   return (
     <>
     <Head>
-      <title>Dipped Home</title>
+      <title>Dipped</title>
     </Head>
     <div>
     <div className='bg-pink border-b-2 border-pink align-center'>

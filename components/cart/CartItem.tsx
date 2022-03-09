@@ -4,7 +4,7 @@ import cartAtom from '../../state/atoms'
 
 interface CartItemProps {
   id: number,
-  name: string,
+  name: string | any,
   price: number,
   image: string
 }
