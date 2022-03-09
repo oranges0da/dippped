@@ -42,15 +42,17 @@ const Cart: NextPage = () => {
         <Head>
           <title>Cart - Dippped</title>
         </Head>
-        <div className='text-center'>
-          <h1 className='text-xl md:text-5xl font-quando'>Your cart is empty.</h1>
-          <div>
-            <Link href='/products'>Shop Now</Link>
-          </div>
-          <div className='flex flex-row'>
+        <div className='text-center font-karla'>
+          <h1 className='text-xl md:text-5xl font-quando my-20'>Your cart is empty.</h1>
+          <Link href='/products'>
+            <div className='flex justify-center my-12'>
+              <h1 className='bg-pink font-bold px-4 py-3 md:hover:scale-110 hover:cursor-pointer'>Continue Shopping</h1>
+            </div>
+          </Link>
+          <div className='md:flex flex-row'>
             <h1>Featured Collection</h1>
             {productSuggestions.map((item, index) => (
-              <div key={index} className=''>
+              <div key={index} className='md:hover:scale-105'>
                 <ProductCard id={item.id} title={item.name} price={item.price} image={item.image} showPrice={true} />
               </div>
             ))}
@@ -73,7 +75,7 @@ const Cart: NextPage = () => {
         <div className='flex flex-row'>
             <h1>Featured Collection</h1>
             {productSuggestions.map((item, index) => (
-              <div key={index} className=''>
+              <div key={index} className='md:hover:scale-105'>
                 <ProductCard id={item.id} title={item.name} price={item.price} image={item.image} showPrice={true} />
               </div>
             ))}
