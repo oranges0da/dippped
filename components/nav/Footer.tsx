@@ -21,7 +21,7 @@ interface FooterButtonProps {
 
 const FooterButton: React.FC<FooterButtonProps> = ({ source, path, size }) => {
   return (
-    <a href={path} className='mx-2 sm:hover:scale-110' rel="noopener noreferrer" target='_blank'>
+    <a href={path} className='mx-2 sm:hover:scale-110 sm:transition-all' rel="noopener noreferrer" target='_blank'>
       <Image src={source} height={size} width={size} />
     </a>
   )

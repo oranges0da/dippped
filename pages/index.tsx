@@ -30,8 +30,8 @@ const Home: NextPage = () => {
     </Head>
     <div>
     <div className='bg-pink border-b-2 border-pink align-center'>
-      <ShopNowButton />
       <div className='bg-pink text-center pb-7'>
+        <img src='https://i.imgur.com/pxiPTue.jpg' />
         <h1 className='font-quando text-2xl pt-12 pl-10 pr-10'>
           Give a Gift That Leaves a Lasting Impression
         </h1>
@@ -48,21 +48,12 @@ const Home: NextPage = () => {
     <div className='sm:flex flex-wrap md:mx-6'>
       {BestSellerData.map((item, index) => (
         <div key={index} className='basis-1/2'>
-          <ProductCard id={item.id} title={item.title} price={1} image={item.image} showPrice={false} />
+          <ProductCard id={item.id} title={item.title} price={1} image={item.image} showPrice={false} showArrow={true} />
         </div>
       ))}
     </div>
     </div>
     </>
-  )
-}
-
-// overlay on image "shop now" button
-const ShopNowButton: React.FC = () => {
-  return (
-    <div className="relative ">
-      <img src='https://i.imgur.com/pxiPTue.jpg' />
-    </div> 
   )
 }
 

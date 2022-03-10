@@ -43,7 +43,6 @@ const Product = ({ product }) => {
         <title>{product.name} - Dipped </title>
       </Head>
       <div>
-        {console.log(cartItems)}
         <main className="my-8 font-karla text-lg">
         <div className="px-6">
             <div className="md:flex">
@@ -51,10 +50,10 @@ const Product = ({ product }) => {
                   <img src={product.images[0]} />
                 </div>
                 <div className="w-full max-w-lg mx-auto sm:mt-8 md:ml-14 md:w-1/2 justify-between text-3xl">
-                    <h1>{product.name}</h1>
+                    <h1 className='font-quando'>{product.name}</h1>
                     <h2 className='text-sm my-2'>{product.desc}</h2>
                     <h1 className="my-4">${product.price}.00</h1>
-                    <div className='text-center bg-black rounded-3xl mt-5'>
+                    <div className='text-center bg-black rounded-3xl mt-5 md:hover:scale-105 sm:transition-all'>
                       <button 
                         className='hover:cursor-pointer text-white py-2'
                         onClick={() => addCart()}

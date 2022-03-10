@@ -24,7 +24,9 @@ const Product: NextPage = ({ products }: any) => {
                 title={item.name} 
                 price={item.price}
                 image={item.images[0]}
-                showPrice={true} />
+                showPrice={true} 
+                showArrow={false}
+              />
             </div>
           ))}
         </div>
