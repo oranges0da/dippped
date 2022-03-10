@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import NavButton from '../utils/NavButton';
 import LogoIcon from '../utils/LogoIcon';
+import cartAtom from '../../state/atoms';
+import { useRecoilValue } from 'recoil';
 
 // various sizes for icons
 const cartSize = 75
@@ -17,6 +19,8 @@ if (typeof window === 'object') {
 }
 
 export const Navbar: React.FC = () => {
+  const cartItems = useRecoilValue(cartAtom)
+
   return (
     <nav className="py-8 sticky top-0 z-[1000] bg-white font-karla border-b border-gray">
       <div className="flex justify-between">
@@ -56,7 +60,7 @@ export const Navbar: React.FC = () => {
             </li>
           </ul>
           </div>
-          <div className="items-center lg:flex lg:order-2 lg:mr-2">
+          <div className="items-center lg:flex lg:order-2 lg:mr-2 relative">
             <LogoIcon source='https://i.imgur.com/IfvSH09.jpg' size={cartSize} path='/cart' />
           </div>
       </div>
