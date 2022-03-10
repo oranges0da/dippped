@@ -42,18 +42,18 @@ const Cart: NextPage = () => {
         <Head>
           <title>Cart - Dippped</title>
         </Head>
-        <div className='text-center font-karla'>
-          <h1 className='text-xl md:text-5xl font-quando my-20'>Your cart is empty.</h1>
+        <div className='font-karla'>
+          <h1 className='text-xl md:text-5xl font-quando my-20 text-center'>Your cart is empty.</h1>
           <Link href='/products'>
             <div className='flex justify-center my-12'>
-              <h1 className='bg-pink font-bold px-4 py-3 md:hover:scale-110 hover:cursor-pointer sm:transition-all'>Continue Shopping</h1>
+              <h1 className='bg-pink font-bold px-4 py-3 hover:scale-110 hover:cursor-pointer sm:transition-all'>Continue Shopping</h1>
             </div>
           </Link>
-          <div className='md:flex flex-row'>
-            <h1>Featured Collection</h1>
+          <h1 className='ml-5 text-xl'>Featured Collection</h1>
+          <div className='sm:flex mx-auto'>
             {productSuggestions.map((item, index) => (
-              <div key={index} className='md:hover:scale-105 sm:transition-all'>
-                <ProductCard id={item.id} title={item.name} price={item.price} image={item.image} showPrice={true} />
+              <div key={index} className='sm:hover:scale-105 sm:transition-all'>
+                <ProductCard id={item.id} title={item.name} price={item.price} image={item.image} showPrice={false} showArrow={true} />
               </div>
             ))}
           </div>
@@ -72,11 +72,11 @@ const Cart: NextPage = () => {
           ))}
           <h1>Checkout</h1>
         </div>
-        <div className='flex flex-row'>
-            <h1>Featured Collection</h1>
+        <h1 className='text-xl ml-5 font-karla'>Featured Collection</h1>
+        <div className='sm:flex mx-auto'>
             {productSuggestions.map((item, index) => (
               <div key={index} className='md:hover:scale-105 sm:transition-all'>
-                <ProductCard id={item.id} title={item.name} price={item.price} image={item.image} showPrice={true} />
+                <ProductCard id={item.id} title={item.name} price={item.price} image={item.image} showPrice={false} showArrow={true} />
               </div>
             ))}
           </div>

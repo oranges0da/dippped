@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 import ProductCard from '../../components/product/ProductCard'
 
-const url = 'http://localhost:4000/api/products'
+const url = 'http://localhost:4000/products'
 
 const Product: NextPage = ({ products }: any) => {
   return (
