@@ -1,12 +1,11 @@
 import React from 'react'
-import { NextPage } from 'next'
 import CartItem from './CartItem'
 import { useRecoilValue } from 'recoil'
 import cartAtom from '../../state/atoms'
 
-const HasCartItems: NextPage = () => {
+const HasCartItems: React.FC = () => {
   const cartItems = useRecoilValue(cartAtom)
-  
+
   return (
     <div className='flex text-2xl justify-between'>
     {cartItems.map(item => (
