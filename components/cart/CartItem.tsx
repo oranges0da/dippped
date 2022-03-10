@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRecoilState } from 'recoil'
 import cartAtom from '../../state/atoms'
+import Image from 'next/image'
 
 interface CartItemProps {
   id: number,
@@ -8,6 +9,8 @@ interface CartItemProps {
   price: number,
   image: string
 }
+
+const imageSize = 100
 
 const CartItem: React.FC<CartItemProps> = ({ id, name, price, image }) => {
   const [cartItems, setCartItems] = useRecoilState(cartAtom)
@@ -19,15 +22,13 @@ const CartItem: React.FC<CartItemProps> = ({ id, name, price, image }) => {
   }
 
   return (
-    <div>
-      <h1>{id}</h1>
-      <h1>{name}</h1>
-      <h1>${price}.00</h1>
-      <img src={image} />
-      <button 
-        className='border border-gray my-5'
-        onClick={() => handleDelete()}
-      >Delete</button>
+    <div className='border-b-1 border-gray flex'>
+      <Image src={image} height={imageSize} width={imageSize} />
+      <div className=''>
+        <h1>{name}</h1>
+        <h1>{price}</h1>
+        <button onClick={() => handleDelete()}>Delete</button>
+      </div>
     </div>
   )
 }
