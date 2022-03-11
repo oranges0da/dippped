@@ -4,9 +4,7 @@ import Head from 'next/head'
 import ProductCard from '../../components/product/ProductCard'
 import products from '../../db/db'
 
-const url = 'http://localhost:4000/products'
-
-const Product: NextPage = ({ products }: any) => {
+const Product: NextPage = () => {
   return (
     <>
       <Head>
@@ -32,14 +30,6 @@ const Product: NextPage = ({ products }: any) => {
       </div>
     </>
   )
-}
-
-export const getStaticProps = async () => {
-  return {
-    props: {
-      products
-    }
-  }
 }
 
 export default Product

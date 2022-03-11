@@ -5,7 +5,6 @@ type productsType = {
   price: number,
   price_id: string,
   images: string[],
-
 }[]
 
 const products: productsType = [
