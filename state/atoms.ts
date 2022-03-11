@@ -7,6 +7,7 @@ interface CartItem {
   id: number,
   name: string,
   price: number,
+  stripe_price_id: string,
   images: string[]
 }
 

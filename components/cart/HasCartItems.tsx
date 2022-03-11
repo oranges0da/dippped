@@ -11,25 +11,29 @@ const HasCartItems: React.FC = () => {
   const [stripeErr, setStripeErr] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
 
+  const stripeCartItems = cartItems.map(item => {
+    return {
+      price: item.stripe_price_id,
+      quantity: 1
+    }
+  })
+
   const handleCheckout = async () => {
     setLoading(true)
 
     const stripe = await stripePromise
 
     const checkout = await stripe?.redirectToCheckout({
-      lineItems: [{
-        price: 'price_1KbvmtKdGoM4dCrl56DfkxfC',
-        quantity: 1
-      }, {
-        price: 'price_1KbwViKdGoM4dCrlcxyt3oCK',
-        quantity: 1
-      }],
+      lineItems: stripeCartItems,
       mode: "payment",
       cancelUrl: 'http://localhost:3000/cart',
       successUrl: 'http://localhost:3000/success'
     })
 
-    setLoading(false)
+    if (checkout?.error) {
+      setLoading(false)
+      console.log(checkout?.error)
+    }
   }
 
   return (

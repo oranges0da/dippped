@@ -37,6 +37,7 @@ const Product = () => {
           id: product?.id,
           name: product?.name,
           price: product?.price,
+          stripe_price_id: product?.stripe_price_id,
           images: product?.images
         }
       ])
