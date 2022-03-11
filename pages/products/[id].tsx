@@ -35,20 +35,20 @@ const Product = () => {
       setCartItems(oldCartItems => [
         ...oldCartItems, {
           id: product?.id,
-          name: product?.title,
+          name: product?.name,
           price: product?.price,
           images: product?.images
         }
       ])
     } else {
-      alert(`The ${product?.title} is already in your cart. For large orders or catering, please contact example@info.com`)
+      alert(`The ${product?.name} is already in your cart. For large orders or catering, please contact example@info.com`)
     }
   }
 
   return (
     <>
       <Head>
-        <title>{product?.title} - Dipped </title>
+        <title>{product?.name} - Dipped </title>
       </Head>
       <div>
         <main className="my-8 font-karla text-lg">
@@ -58,7 +58,7 @@ const Product = () => {
                   <img src={product?.images[0]} />
                 </div>
                 <div className="w-full max-w-lg mx-auto md:ml-14 md:w-1/2 justify-between">
-                    <h1 className='font-quando text-3xl my-5 mt-10 md:my-0 md:mt-0'>{product?.title}</h1>
+                    <h1 className='font-quando text-3xl my-5 mt-10 md:my-0 md:mt-0'>{product?.name}</h1>
                     <h1 className='my-5 text-md'>{product?.desc}</h1>
                     <h1 className="my-4 text-3xl">${product?.price}.00</h1>
                     <div 

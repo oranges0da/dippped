@@ -18,7 +18,7 @@ const Product: NextPage = () => {
             <div className='basis-1/2'>
               <ProductCard
                 id={item.id}
-                title={item.title} 
+                title={item.name} 
                 price={item.price}
                 image={item.images[0]}
                 showPrice={true} 
