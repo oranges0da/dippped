@@ -1,9 +1,8 @@
 import { NextPage } from 'next'
 import React from 'react'
-import axios from 'axios'
-import Image from 'next/image'
 import Head from 'next/head'
 import ProductCard from '../../components/product/ProductCard'
+import products from '../../db/db'
 
 const url = 'http://localhost:4000/products'
 
@@ -21,7 +20,7 @@ const Product: NextPage = ({ products }: any) => {
             <div className='basis-1/2'>
               <ProductCard
                 id={item.id}
-                title={item.name} 
+                title={item.title} 
                 price={item.price}
                 image={item.images[0]}
                 showPrice={true} 
@@ -36,9 +35,6 @@ const Product: NextPage = ({ products }: any) => {
 }
 
 export const getStaticProps = async () => {
-  const { data } = await axios.get(url)
-  const products = await data.products
-  
   return {
     props: {
       products

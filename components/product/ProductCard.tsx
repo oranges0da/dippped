@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { CgArrowLongRight } from 'react-icons/cg'
 
 interface ProductCardProps {
-  id: number | undefined,
+  id: number,
   title: string,
   price: number,
   image: string,
