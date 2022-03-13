@@ -56,10 +56,12 @@ const Product = () => {
         <div className="px-6">
             <div className="md:flex">
                 <div className="w-full">
-                  <img src={product?.images[0]} />
+                  {product?.images.map(item => (
+                    <img src= {item}  className='my-5 rounded-sm' />
+                  ))}
                 </div>
                 <div className="w-full max-w-lg mx-auto md:ml-14 md:w-1/2 justify-between">
-                    <h1 className='font-quando text-3xl my-5 mt-10 md:my-0 md:mt-0'>{product?.name}</h1>
+                    <h1 className='font-quando text-3xl my-5 mt-10 md:my-0 md:mt-4'>{product?.name}</h1>
                     <h1 className='my-5 text-md'>{product?.desc}</h1>
                     <h1 className="my-4 text-3xl">${product?.price}.00</h1>
                     <div 
