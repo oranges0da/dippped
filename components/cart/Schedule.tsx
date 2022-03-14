@@ -8,7 +8,8 @@ const Schedule: React.FC = () => {
   const [startDate, setStartDate] = useState<any>(new Date())
 
   return (
-    <div>
+    <div className=''>
+      <h1>Please pick a date for delivery.</h1>
       <DatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} />
     </div>
   )

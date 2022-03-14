@@ -42,7 +42,7 @@ const Cart: NextPage = () => {
         <title>Cart - Dippped</title>
       </Head>
       {
-        cartItems.length !== 0 ? <HasCartItems /> : <NoCartItems />
+        cartItems.length !== 0 ? <HasCartItems /> : <NoCartItems /> // render whichever page depending on if cart is empty
       }
       <div className='sm:flex mx-auto'>
       {productSuggestions.map((item, index) => (

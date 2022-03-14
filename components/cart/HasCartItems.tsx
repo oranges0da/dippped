@@ -47,7 +47,7 @@ const HasCartItems: React.FC = () => {
           <CartItem id={item.id} name={item.name} price={item.price} image={item.images[0]} />
         ))}
       </div>
-      <div>
+      <div className='flex justify-end'>
         <Schedule />
       </div>
       <div onClick={() => handleCheckout()} className='bg-black hover:cursor-pointer'>

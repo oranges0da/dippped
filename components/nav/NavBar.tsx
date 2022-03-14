@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import NavButton from '../utils/NavButton';
+import NavButton from './NavButton';
 import LogoIcon from '../utils/LogoIcon';
 import cartAtom from '../../state/atoms';
 import { useRecoilValue } from 'recoil';
