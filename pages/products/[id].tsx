@@ -10,27 +10,16 @@ const Product = () => {
   const [cartItems, setCartItems] = useRecoilState(cartAtom)
   const [quantity, setQuantity] = useState(1)
 
-  const { id } = router.query
+  const { id } = router.query // getting id product that user clicked
 
   console.log(products) // for creating client database
 
-  const product = products.find(item => item.id.toString() === id)
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity => quantity -= 1)
-    }
-  }
-
-  const increaseQuantity = () => {
-    if (quantity < 10) {
-      setQuantity(quantity => quantity += 1)
-    }
-  }
+  const product = products.find(item => item.id.toString() === id) // find product by id from db
 
   const addCart = () => {
     const found = cartItems.find(item => item.id === product?.id)
 
+    // seeing if product is already in cart
     if (!found) {
       setCartItems(oldCartItems => [
         ...oldCartItems, {
