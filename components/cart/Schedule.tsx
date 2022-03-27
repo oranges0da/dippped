@@ -6,6 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const Schedule: React.FC = () => {
   const [startDate, setStartDate] = useState<any>(new Date())
+  const [time, setTime] = useState<string>('10:00')
 
   return (
     <div className=''>

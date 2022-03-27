@@ -19,6 +19,7 @@ if (typeof window === 'object') {
 }
 
 export const Navbar: React.FC = () => {
+  // getting global items in user's cart
   const cartItems = useRecoilValue(cartAtom)
 
   return (
