@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import ProductCard from '../components/product/ProductCard'
 
+// data for bestseller section of home page
 const BestSellerData = [
   {
     id: 1,

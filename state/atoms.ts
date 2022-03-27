@@ -11,6 +11,7 @@ interface CartItem {
   images: string[]
 }
 
+// for holding global state of items that are in user's cart
 const cartAtom = atom({
   key: 'cartAtom',
   default: [] as CartItem[],
