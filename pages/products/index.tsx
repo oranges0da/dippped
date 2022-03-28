@@ -6,7 +6,7 @@ import axios from 'axios'
 
 const url = 'http://localhost:4000/products' // api url
 
-const Product: NextPage = ({ products }) => {
+const Product: NextPage = ({ products }: any) => {
   return (
     <>
       <Head>

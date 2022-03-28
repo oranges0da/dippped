@@ -42,3 +42,4 @@ jspm_packages
 # env files
 .env
 .env.local
+.vscode
