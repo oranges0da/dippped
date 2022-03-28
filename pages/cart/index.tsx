@@ -7,6 +7,7 @@ import ProductCard from '../../components/product/ProductCard'
 import HasCartItems from '../../components/cart/HasCartItems'
 import NoCartItems from '../../components/cart/NoCartItems'
 
+// for product suggestions under cart
 const productSuggestions = [
   {
     id: 1,
@@ -32,6 +33,7 @@ const productSuggestions = [
 ]
 
 const Cart: NextPage = () => {
+  // get user's items from state
   const cartItems = useRecoilValue(cartAtom)
 
   console.log(cartItems)

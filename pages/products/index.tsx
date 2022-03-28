@@ -2,9 +2,11 @@ import { NextPage } from 'next'
 import React from 'react'
 import Head from 'next/head'
 import ProductCard from '../../components/product/ProductCard'
-import products from '../../db/db'
+import axios from 'axios'
 
-const Product: NextPage = () => {
+const url = 'http://localhost:4000/products' // api url
+
+const Product: NextPage = ({ products }) => {
   return (
     <>
       <Head>
@@ -30,6 +32,18 @@ const Product: NextPage = () => {
       </div>
     </>
   )
+}
+
+// get every product for each product path from api
+export const getStaticProps = async () => {
+  const { data } = await axios.get(url)
+  const products = await data.products
+  
+  return {
+    props: {
+      products
+    }
+  }
 }
 
 export default Product

@@ -16,6 +16,7 @@ const imageSize = 100
 const CartItem: React.FC<CartItemProps> = ({ id, name, price, image }) => {
   const [cartItems, setCartItems] = useRecoilState(cartAtom)
 
+  // delete item from cart by id
   const handleDelete = () => {
     setCartItems(oldCartItems => oldCartItems.filter(item => item.id !== id))
 

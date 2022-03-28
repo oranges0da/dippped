@@ -24,6 +24,7 @@ const HasCartItems: React.FC = () => {
 
     const stripe = await stripePromise
 
+    // create new stripe checkout session
     const checkout = await stripe?.redirectToCheckout({
       lineItems: stripeCartItems,
       mode: "payment",
