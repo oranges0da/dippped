@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 const NoCartItems: React.FC = () => {
+  // if no cart items, show this component
   return (
     <div className='font-karla'>
       <h1 className='text-xl md:text-5xl font-quando my-20 text-center'>Your cart is empty.</h1>

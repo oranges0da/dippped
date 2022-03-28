@@ -10,6 +10,7 @@ interface ProductCardProps {
   showArrow: boolean
 }
 
+// mini product card component to use throughout app
 const ProductCard: React.FC<ProductCardProps> = ({ id, title, price, image, showPrice, showArrow }) => {
   return (
     <Link href={`products/${id}`}>

@@ -5,7 +5,7 @@ interface NavProps {
   path: string
 }
 
-// main navbar buttons home, contact, etc
+// main navbar buttons for home, contact, etc
 const NavButton: React.FC<NavProps> = props => {
   return (
     <div className='hover:cursor-pointer opacity-[0.7] hover:underline hover:opacity-[1] lg:mr-4 hover:underline-offset-4'>

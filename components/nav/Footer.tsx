@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 
 const Footer: React.FC = () => {
+  // social media links
   return (
     <div className='border-t border-gray my-6 font-karla text-sm'>
       <div className='flex md:justify-end justify-center my-14 md:mr-8'>

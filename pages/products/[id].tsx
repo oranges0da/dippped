@@ -6,7 +6,6 @@ import { useRecoilState } from 'recoil'
 
 const Product = ({ product }) => {
   const [cartItems, setCartItems] = useRecoilState(cartAtom)
-  const [quantity, setQuantity] = useState(1)
 
   const addCart = () => {
     const found = cartItems.find(item => item.id === product.id)
@@ -36,7 +35,11 @@ const Product = ({ product }) => {
         <div className="px-6">
             <div className="md:flex">
                 <div className="w-full">
-                  <img src={product.images[0]} />
+                  {product.images.map(image => (
+                    <div>
+                      <img src={image} />
+                    </div>
+                  ))}
                 </div>
                 <div className="w-full max-w-lg mx-auto md:ml-14 md:w-1/2 justify-between">
                     <h1 className='font-quando text-3xl my-5 mt-10 md:my-0 md:mt-0'>{product.name}</h1>

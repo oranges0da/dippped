@@ -4,7 +4,7 @@ import LogoIcon from '../utils/LogoIcon';
 import cartAtom from '../../state/atoms';
 import { useRecoilValue } from 'recoil';
 
-// various sizes for icons
+// various sizes for various icons
 const cartSize = 75
 const logoSize = 65
 
@@ -65,6 +65,7 @@ export const Navbar: React.FC = () => {
             <LogoIcon source='https://i.imgur.com/IfvSH09.jpg' size={cartSize} path='/cart' />
           </div>
       </div>
+      {/* mobile navbar */}
       <div className='mobile-menu hidden'>
         <ul className='flex-row text-center my-7 lg:hidden'>
           <MobileNavButton name='Home' path='/' />

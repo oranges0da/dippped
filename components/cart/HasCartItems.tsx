@@ -2,16 +2,17 @@ import React, { useState} from 'react'
 import CartItem from './CartItem'
 import { useRecoilValue } from 'recoil'
 import cartAtom from '../../state/atoms'
-import { loadStripe } from '@stripe/stripe-js'
 import Schedule from './Schedule'
+import axios from 'axios'
 
-const stripePromise = loadStripe('pk_test_51KOR9pKdGoM4dCrlq6pFdVhbnbN71JOKhx8VkxWtiDU8LU2s3FjWHZLI8Zn8HwXbmtZtAYUweAQVjlzp3vJJptvJ00D2Gl3i4B')
+const url = 'http://localhost:4000/checkout'
 
 const HasCartItems: React.FC = () => {
   const cartItems = useRecoilValue(cartAtom)
   const [stripeErr, setStripeErr] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
 
+  // turn user's cart items into list_items that can be sent to Stripe
   const stripeCartItems = cartItems.map(item => {
     return {
       price: item.stripe_price_id,
@@ -19,26 +20,13 @@ const HasCartItems: React.FC = () => {
     }
   })
 
+  // send list_items to Stripe to create a checkout session
   const handleCheckout = async () => {
     setLoading(true)
 
-    const stripe = await stripePromise
-
-    // create new stripe checkout session
-    const checkout = await stripe?.redirectToCheckout({
-      lineItems: stripeCartItems,
-      mode: "payment",
-      cancelUrl: 'http://localhost:3000/cart',
-      successUrl: 'http://localhost:3000/success',
-      shippingAddressCollection: {
-        allowedCountries: ['CA']
-      },
+    const { data } = await axios.post(url, {
+      stripe_items: stripeCartItems
     })
-
-    if (checkout?.error) {
-      setLoading(false)
-      console.log(checkout?.error)
-    }
   }
 
   return (
@@ -51,7 +39,7 @@ const HasCartItems: React.FC = () => {
       <div className='flex justify-end'>
         <Schedule />
       </div>
-      <div onClick={() => handleCheckout()} className='bg-black hover:cursor-pointer'>
+      <div className='bg-black hover:cursor-pointer' onClick={() => handleCheckout()}>
         <h1 className='text-white'>Checkout</h1>
       </div>
     </div>
