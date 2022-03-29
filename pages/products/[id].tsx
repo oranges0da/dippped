@@ -36,9 +36,7 @@ const Product = ({ product }) => {
             <div className="md:flex">
                 <div className="w-full">
                   {product.images.map(image => (
-                    <div>
-                      <img src={image} />
-                    </div>
+                    <img src={image} alt={product.name} className="w-full mb-7 rounded-sm" />
                   ))}
                 </div>
                 <div className="w-full max-w-lg mx-auto md:ml-14 md:w-1/2 justify-between">
