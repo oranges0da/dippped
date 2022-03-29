@@ -26,9 +26,11 @@ const HasCartItems: React.FC = () => {
 
     console.log(stripeCartItems)
 
-    const { data } = await axios.post(url, {
+    const { data: res } = await axios.post(url, {
       stripe_items: stripeCartItems
     })
+
+    window.location.href = res.url;
   }
 
   return (
