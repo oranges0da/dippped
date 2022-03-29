@@ -13,16 +13,18 @@ const HasCartItems: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false)
 
   // turn user's cart items into list_items that can be sent to Stripe
-  const stripeCartItems = cartItems.map(item => {
-    return {
+  const stripeCartItems = cartItems.map(item => (
+    {
       price: item.stripe_price_id,
       quantity: 1
     }
-  })
+  ))
 
   // send list_items to Stripe to create a checkout session
   const handleCheckout = async () => {
     setLoading(true)
+
+    console.log(stripeCartItems)
 
     const { data } = await axios.post(url, {
       stripe_items: stripeCartItems
