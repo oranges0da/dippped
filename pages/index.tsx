@@ -32,14 +32,21 @@ const Home: NextPage = () => {
     <div>
     <div className='bg-pink border-b-2 border-pink align-center'>
       <div className='bg-pink text-center pb-7'>
-        <img src='https://i.imgur.com/pxiPTue.jpg' />
+        <div className='relative'>
+          <div className=''>
+            <img src='https://i.imgur.com/pxiPTue.jpg' />
+          </div>
+          <div className='absolute flex text-center'>
+            <h1>Shop Now</h1>
+          </div>
+        </div>
         <h1 className='font-quando text-2xl pt-12 pl-10 pr-10'>
           Give a Gift That Leaves a Lasting Impression
         </h1>
-        <h2 className='pt-6 px-20 font-karla md:mx-20'>
-          A unqiue gift that will leave recipeients 
-          feeling happy, excited, and surprised. 
-          With our dipped treats, you will get a
+        <h2 className='pt-6 px-20 font-karla'>
+          A unqiue gift that will leave recipeients <br />
+          feeling happy, excited, and surprised.
+          With our dipped treats, you will get a <br />
           quality assortment that looks impressive
           and tastes great.
         </h2>
