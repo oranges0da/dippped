@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import ProductCard from '../components/product/ProductCard'
+import Link from 'next/link'
 
 // data for bestseller section of home page
 const BestSellerData = [
@@ -29,15 +30,11 @@ const Home: NextPage = () => {
     <Head>
       <title>Dippped - Home</title>
     </Head>
-    <div>
     <div className='bg-pink border-b-2 border-pink align-center'>
       <div className='bg-pink text-center pb-7'>
-        <div className='relative'>
-          <div className=''>
+        <div className='flex justify-center'>
+          <div className='flex-col'>
             <img src='https://i.imgur.com/pxiPTue.jpg' />
-          </div>
-          <div className='absolute flex text-center'>
-            <h1>Shop Now</h1>
           </div>
         </div>
         <h1 className='font-quando text-2xl pt-12 pl-10 pr-10'>
@@ -59,7 +56,6 @@ const Home: NextPage = () => {
           <ProductCard id={item.id} title={item.title} price={1} image={item.image} showPrice={false} showArrow={true} />
         </div>
       ))}
-    </div>
     </div>
     </>
   )
