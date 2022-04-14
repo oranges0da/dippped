@@ -1,6 +1,9 @@
 import { NextPage } from 'next'
 import React, { useState, useEffect, } from 'react'
 import Head from 'next/head'
+import axios from 'axios'
+
+const url = 'http://localhost:4000'
 
 const ContactPage: NextPage = () => {
   const [firstName, setName] = useState('')
@@ -8,12 +11,21 @@ const ContactPage: NextPage = () => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
 
+  const handleSubmit = async () => {
+    const res = await axios.post(`${url}/contact`, {
+      firstName,
+      lastName,
+      email,
+      message
+    })
+  }
+
   return (
     <>
       <Head>
         <title>Contact - Head</title>
       </Head>
-      <div className='mx-20 my-10 font-karla'>
+      <form className='mx-20 my-10 font-karla'>
         <h1 className='text-center mb-10'>Contact Us</h1>
         <div className="w-full max-w-lg">
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -49,7 +61,7 @@ const ContactPage: NextPage = () => {
         </div>
         <div className="md:flex md:items-center">
           <div className="md:w-1/3">
-            <button className="sm:hover:scale-110 transition-all align-center border border-gray-200 bg-teal-400 hover:bg-teal-400 focus:outline-none text-black font-bold py-2 px-4 rounded" type="button">
+            <button onClick={() => handleSubmit()} className="sm:hover:scale-110 transition-all align-center border border-gray-200 bg-teal-400 hover:bg-teal-400 focus:outline-none text-black font-bold py-2 px-4 rounded" type="button">
               Submit
             </button>
           </div>
@@ -61,7 +73,7 @@ const ContactPage: NextPage = () => {
           Email: {email} <br />
           Message: {message} <br />
         </div>
-      </div>
+      </form>
     </>
   )
 }
