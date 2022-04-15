@@ -30,7 +30,14 @@ const HasCartItems: React.FC = () => {
       stripe_items: stripeCartItems
     })
 
-    window.location.href = res.url;
+    console.log(res)
+    
+    if (res) {
+      window.location.href = res.url
+    } else {
+      setStripeErr(res.message)
+
+    }
   }
 
   return (
@@ -43,8 +50,8 @@ const HasCartItems: React.FC = () => {
       <div className='flex justify-end'>
         <Schedule />
       </div>
-      <div className='bg-black hover:cursor-pointer' onClick={() => handleCheckout()}>
-        <h1 className='text-white'>Checkout</h1>
+      <div className='bg-black hover:cursor-pointer text-center py-4 mx-20 rounded-full text-2xl text-white' onClick={() => handleCheckout()}>
+        <h1>Checkout</h1>
       </div>
     </div>
   )
