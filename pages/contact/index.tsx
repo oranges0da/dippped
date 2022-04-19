@@ -29,7 +29,7 @@ const ContactPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Contact - Head</title>
+        <title>Contact - Dippped</title>
       </Head>
       <form className='mx-20 my-10 font-karla'>
         <h1 className='text-center mb-10'>Contact Us</h1>
