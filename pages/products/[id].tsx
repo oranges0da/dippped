@@ -29,7 +29,10 @@ const Product = ({ product }) => {
         }
       ])
     } else {
-      alert(`The ${product.name} is already in your cart. For large orders or catering, please contact example@info.com`)
+      addToast("Product already in cart, for larger orders or catering please contact example@gmail.com", {
+        appearance: 'warning',
+        autoDismiss: false,
+      })
     }
   }
 
