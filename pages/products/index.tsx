@@ -13,9 +13,9 @@ const Product: NextPage = ({ products }: any) => {
         <title>Products - Dippped</title>
       </Head>
       <div className='font-karla'>
-        <div className='md:ml-20 mt-5 ml-4 font-ubuntu'>
-          <h1 className='md:ml-4 my-10 text-4xl'>Shop</h1>
-          <h2 className='md:ml-4 my-12'>Our Catalogue of Products.</h2>
+        <div className='md:ml-20 mt-5 font-ubuntu text-center md:text-left'>
+          <h1 className='md:ml-4 my-6 text-4xl'>Shop</h1>
+          <h2 className='md:ml-4 my-10'>Our Catalogue of Products.</h2>
         </div>
         <div className='sm:flex flex-wrap md:mx-20 md:my-10'>
           {products.map(item => (
