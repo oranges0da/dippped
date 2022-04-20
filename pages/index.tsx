@@ -52,7 +52,7 @@ const Home: NextPage = () => {
     <h1 className='md:ml-10 md:mt-10 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
     <div className='sm:flex flex-wrap md:mx-6'>
       {BestSellerData.map((item, index) => (
-        <div key={index} className='basis-1/2'>
+        <div key={index} className='basis-1/3'>
           <ProductCard id={item.id} title={item.title} price={1} image={item.image} showPrice={false} showArrow={true} />
         </div>
       ))}
