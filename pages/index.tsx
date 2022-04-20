@@ -21,6 +21,14 @@ const BestSellerData = [
     id: 4,
     title: "Wedding Box",
     image: 'https://i.imgur.com/ALiZFnz.jpg'
+  }, {
+    id: 3,
+    title: "Mini Wedding Box",
+    image: 'https://i.imgur.com/0aDE5Yk.jpg'
+  }, {
+    id: 6,
+    title: "Chocolate Lover's (Heart Box)",
+    image: "https://i.imgur.com/ORQGPwt.jpg"
   }
 ]
 
