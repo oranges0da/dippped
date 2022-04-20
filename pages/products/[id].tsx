@@ -3,15 +3,22 @@ import axios from 'axios'
 import Head from 'next/head'
 import cartAtom from '../../state/atoms'
 import { useRecoilState } from 'recoil'
+import { useToasts } from 'react-toast-notifications'
 
 const Product = ({ product }) => {
   const [cartItems, setCartItems] = useRecoilState(cartAtom)
+  const { addToast } = useToasts()
 
   const addCart = () => {
     const found = cartItems.find(item => item.id === product.id)
 
     // check if product already in cart
     if (!found) {
+      addToast("Successfully added to cart", {
+        appearance: 'success',
+        autoDismiss: true,
+      })
+
       setCartItems(oldCartItems => [
         ...oldCartItems, {
           id: product.id,
