@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, title, price, image, show
         <div className='flex justify-between mx-3 px-2 pt-4 pb-4'>
           <h1 className='font-quando text-sm mt-1'>{title}</h1>
           {showPrice && <h1>${price}.00</h1>}
-          {showArrow && <CgArrowLongRight className='mt-1 mr-1 hover:scale-125 transition-all' />}
+          {showArrow && <CgArrowLongRight className='mt-1 mr-1 sm:hover:scale-125 transition-all' />}
         </div>
       </div>
     </Link>

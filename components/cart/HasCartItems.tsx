@@ -5,12 +5,10 @@ import cartAtom from '../../state/atoms'
 import Schedule from './Schedule'
 import axios from 'axios'
 
-const url = 'http://localhost:4000/checkout'
+const url = 'http://localhost:4000/checkout' // main Stripe checkout endpoint
 
 const HasCartItems: React.FC = () => {
   const cartItems = useRecoilValue(cartAtom)
-  const [stripeErr, setStripeErr] = useState<string | null>(null)
-  const [loading, setLoading] = useState<boolean>(false)
 
   // turn user's cart items into list_items that can be sent to Stripe
   const stripeCartItems = cartItems.map(item => (
@@ -22,21 +20,15 @@ const HasCartItems: React.FC = () => {
 
   // send list_items to Stripe to create a checkout session
   const handleCheckout = async () => {
-    setLoading(true)
+    try {
+      const { data: res } = await axios.post(url, {
+        stripe_items: stripeCartItems
+      })
 
-    console.log(stripeCartItems)
-
-    const { data: res } = await axios.post(url, {
-      stripe_items: stripeCartItems
-    })
-
-    console.log(res)
-    
-    if (res) {
-      window.location.href = res.url
-    } else {
-      setStripeErr(res.message)
-
+      window.location.href = res.url;
+      
+    } catch (err) {
+      console.log(err)
     }
   }
 

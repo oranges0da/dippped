@@ -16,6 +16,10 @@ if (typeof window === 'object') {
   btn?.addEventListener('click', () => {
     menu?.classList.toggle("hidden")
   })
+
+  window.onload = () => { // hiding mobile navbar on reload
+    menu?.classList.toggle("visible") 
+  }
 }
 
 export const Navbar: React.FC = () => {
@@ -26,7 +30,7 @@ export const Navbar: React.FC = () => {
     <nav className="py-8 sticky top-0 z-[1000] bg-white font-karla border-b border-gray">
       <div className="flex justify-between">
         <div className="flex align-center lg:order-2">
-          <button  type="button" className="mobile-menu-button inline-flex items-center mr-4 text-sm sm:hover:scale-110 hover:cursor-pointer ml-6 rounded-lg lg:hidden hover" aria-controls="mobile-menu-2" aria-expanded="false">
+          <button  type="button" className="sm:transition-all mobile-menu-button inline-flex items-center mr-4 text-sm sm:hover:scale-110 hover:cursor-pointer ml-6 rounded-lg lg:hidden hover" aria-controls="mobile-menu-2" aria-expanded="false">
             <Image src='https://i.imgur.com/h664CAz.png' height={50} width={50} />
           </button>
         </div>
