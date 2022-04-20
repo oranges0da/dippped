@@ -13,8 +13,10 @@ const Product: NextPage = ({ products }: any) => {
         <title>Products - Dippped</title>
       </Head>
       <div className='font-karla'>
-        <h1 className='md:ml-20 md:mt-10 text-4xl font-ubuntu ml-3 my-8'>Shop</h1>
-        <h2 className='md:ml-20 md:mt-12 ml-3 my-4'>Our Catalogue of Products.</h2>
+        <div className='md:ml-20 mt-5 ml-4 font-ubuntu'>
+          <h1 className='md:ml-4 my-10 text-4xl'>Shop</h1>
+          <h2 className='md:ml-4 my-12'>Our Catalogue of Products.</h2>
+        </div>
         <div className='sm:flex flex-wrap md:mx-20 md:my-10'>
           {products.map(item => (
             <div className='basis-1/2'>
