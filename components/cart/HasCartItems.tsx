@@ -5,7 +5,7 @@ import cartAtom from '../../state/atoms'
 import Schedule from './Schedule'
 import axios from 'axios'
 
-const url = 'http://localhost:4000/checkout' // main Stripe checkout endpoint
+const url = 'http://192.168.0.13:4000/checkout' // main Stripe checkout endpoint
 
 const HasCartItems: React.FC = () => {
   const cartItems = useRecoilValue(cartAtom)
@@ -20,16 +20,13 @@ const HasCartItems: React.FC = () => {
 
   // send list_items to Stripe to create a checkout session
   const handleCheckout = async () => {
-    try {
-      const { data: res } = await axios.post(url, {
-        stripe_items: stripeCartItems
-      })
+    const { data: res } = await axios.post(url, {
+      stripe_items: stripeCartItems
+    })
 
-      window.location.href = res.url;
-      
-    } catch (err) {
-      console.log(err)
-    }
+    console.log(res)
+
+    window.location = res.url; // redirect to Stripe checkout page
   }
 
   return (
@@ -43,7 +40,6 @@ const HasCartItems: React.FC = () => {
         <Schedule />
       </div>
       <div className='bg-black hover:cursor-pointer text-center py-4 mx-20 rounded-full text-2xl text-white' onClick={() => handleCheckout()}>
-        <h1>Checkout</h1>
       </div>
     </div>
   )
