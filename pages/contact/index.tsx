@@ -2,10 +2,13 @@ import { NextPage } from 'next'
 import React, { useState, useEffect, } from 'react'
 import Head from 'next/head'
 import axios from 'axios'
+import { useToasts } from 'react-toast-notifications'
 
 const url = 'http://localhost:4000'
 
 const ContactPage: NextPage = () => {
+  const { addToast } = useToasts()
+  
   const [firstName, setName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
@@ -20,9 +23,15 @@ const ContactPage: NextPage = () => {
     })
     
     if (data.status === 'success') {
-      alert('Contact Form Submitted')
+      addToast("Contact Form Submitted.", {
+        appearance: 'success',
+        autoDismiss: true,
+      })
     } else {
-      alert('Internal Server Error')
+      addToast("Error submitting contact form.", {
+        appearance: 'error',
+        autoDismiss: false,
+      })
     }
   }
 
