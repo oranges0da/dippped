@@ -42,6 +42,7 @@ const Home: NextPage = () => {
       className='bg-pink border-b-2 border-pink align-center'
       initial={{ opacity:0 }}
       animate={{ opacity:1 }}
+      transition={{ ease: "easeOut", duration: 2 }}
     >
       <div className='bg-pink text-center pb-7'>
         <div className='flex justify-center'>

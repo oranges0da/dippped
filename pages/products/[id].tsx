@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import axios from 'axios'
 import Head from 'next/head'
 import cartAtom from '../../state/atoms'
 import { useRecoilState } from 'recoil'
 import { useToasts } from 'react-toast-notifications'
+import { motion } from 'framer-motion'
 
 const Product = ({ product }) => {
   const [cartItems, setCartItems] = useRecoilState(cartAtom)
@@ -47,7 +48,14 @@ const Product = ({ product }) => {
             <div className="md:flex">
                 <div className="w-full">
                   {product.images.map(image => (
-                    <img src={image} alt={product.name} className="w-full mb-7 rounded-sm" />
+                    <motion.img 
+                      src={image} 
+                      alt={product.name} 
+                      className="w-full mb-7 rounded-sm" 
+                      initial={{ opacity:0 }}
+                      animate={{ opacity:1 }}
+                      transition={{ ease: "easeOut", duration: 2 }}
+                    />
                   ))}
                 </div>
                 <div className="w-full max-w-lg mx-auto md:ml-14 md:w-1/2 justify-between">

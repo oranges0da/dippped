@@ -20,7 +20,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, title, price, image, show
         initial={{ opacity:0 }}
         animate={{ opacity:1 }}
       >
-        <img src={image} />
+        <motion.img 
+          src={image} 
+        />
         <div className='flex justify-between mx-3 px-2 pt-4 pb-4'>
           <h1 className='font-quando text-sm mt-1'>{title}</h1>
           {showPrice && <h1>${price}.00</h1>}
