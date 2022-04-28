@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import ProductCard from '../components/product/ProductCard'
-import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 // data for bestseller section of home page
 const BestSellerData = [
@@ -38,7 +38,11 @@ const Home: NextPage = () => {
     <Head>
       <title>Dippped - Home</title>
     </Head>
-    <div className='bg-pink border-b-2 border-pink align-center'>
+    <motion.div 
+      className='bg-pink border-b-2 border-pink align-center'
+      initial={{ opacity:0 }}
+      animate={{ opacity:1 }}
+    >
       <div className='bg-pink text-center pb-7'>
         <div className='flex justify-center'>
           <div className='flex-col'>
@@ -56,7 +60,7 @@ const Home: NextPage = () => {
           and tastes great.
         </h2>
       </div>
-    </div>
+    </motion.div>
     <h1 className='md:ml-10 md:mt-10 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
     <div className='sm:flex flex-wrap md:mx-6'>
       {BestSellerData.map((item, index) => (

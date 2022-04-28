@@ -3,6 +3,7 @@ import React, { useState, useEffect, } from 'react'
 import Head from 'next/head'
 import axios from 'axios'
 import { useToasts } from 'react-toast-notifications'
+import { motion } from 'framer-motion'
 
 const url = 'http://localhost:4000'
 
@@ -40,7 +41,11 @@ const ContactPage: NextPage = () => {
       <Head>
         <title>Contact - Dippped</title>
       </Head>
-      <form className='md:mx-20 mx-14 my-10 font-karla'>
+      <motion.form 
+        className='md:mx-20 mx-14 my-10 font-karla'
+        initial={{ opacity:0 }}
+        animate={{ opacity:1 }}
+      >
         <div className='md:mx-20'>
           <h1 className='text-center mb-10'>Contact Us</h1>
           <div className="w-full max-w-lg">
@@ -84,7 +89,7 @@ const ContactPage: NextPage = () => {
             <div className="md:w-2/3"></div>
           </div>
       </div>
-      </form>
+      </motion.form>
     </>
   )
 }
