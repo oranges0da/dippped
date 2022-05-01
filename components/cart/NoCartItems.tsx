@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import CartLoading from './CartLoading'
 
 const NoCartItems: React.FC = () => {
   // if no cart items, show this component
@@ -12,7 +11,6 @@ const NoCartItems: React.FC = () => {
           <h1 className='bg-pink font-bold px-4 py-3 hover:scale-110 hover:cursor-pointer sm:transition-all'>Continue Shopping</h1>
         </div>
       </Link>
-      <CartLoading />
     </div>
   )
 }

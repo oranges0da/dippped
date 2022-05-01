@@ -1,14 +1,16 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import CartItem from './CartItem'
 import { useRecoilValue } from 'recoil'
 import cartAtom from '../../state/atoms'
 import Schedule from './Schedule'
 import axios from 'axios'
+import CartLoading from './CartLoading'
 
 const url = 'http://192.168.0.13:4000/checkout' // main Stripe checkout endpoint
 
 const HasCartItems: React.FC = () => {
   const cartItems = useRecoilValue(cartAtom)
+  const [loading, setLoading] = useState<boolean>(false) // for setting loading and letting animation play while waiting for redirect from stripe
 
   // turn user's cart items into list_items that can be sent to Stripe
   const stripeCartItems = cartItems.map(item => (
