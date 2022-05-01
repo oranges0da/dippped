@@ -16,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, title, price, image, show
   return (
     <Link href={`products/${id}`}>
       <motion.div 
-        className='hover:cursor-pointer mt-8 bg-pink font-karla font-semibold rounded mx-4'
+        className='hover:cursor-pointer mt-8 bg-pink font-karla font-semibold rounded mx-2'
         initial={{ opacity:0 }}
         animate={{ opacity:1 }}
       >
