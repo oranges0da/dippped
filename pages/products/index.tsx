@@ -17,7 +17,7 @@ const Product: NextPage = ({ products }: any) => {
           <h1 className='md:ml-4 my-6 text-4xl'>Shop</h1>
           <h2 className='md:ml-4 my-10'>Our Catalogue of Products.</h2>
         </div>
-        <div className='sm:flex flex-wrap md:mx-20 md:my-10'>
+        <div className='sm:flex flex-wrap md:mx-20 lg:my-10'>
           {products.map(item => (
             <div className='basis-1/2'>
               <ProductCard

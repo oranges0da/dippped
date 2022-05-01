@@ -36,7 +36,7 @@ const Home: NextPage = () => {
   return (
     <>
     <Head>
-      <title>Dippped - Home</title>
+      <title>Dippped</title>
     </Head>
     <motion.div 
       className='bg-pink border-b-2 border-pink align-center'
@@ -44,10 +44,10 @@ const Home: NextPage = () => {
       animate={{ opacity:1 }}
       transition={{ ease: "easeOut", duration: 2 }}
     >
-      <div className='bg-pink text-center pb-7'>
+      <div className='bg-pink text-center pb-7 w-full'>
         <div className='flex justify-center'>
           <div className='flex-col'>
-            <img src='https://i.imgur.com/mpfO7bt.jpg' />
+            <img src='https://i.imgur.com/o7C8Yx1.jpg' />
           </div>
         </div>
         <h1 className='font-quando text-2xl pt-12 px-20 md:pt-20 md:text-4xl'>
