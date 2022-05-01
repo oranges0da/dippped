@@ -50,10 +50,10 @@ const Home: NextPage = () => {
             <img src='https://i.imgur.com/mpfO7bt.jpg' />
           </div>
         </div>
-        <h1 className='font-quando text-2xl pt-12 pl-10 pr-10'>
+        <h1 className='font-quando text-2xl pt-12 px-20 md:pt-20 md:text-4xl'>
           Give a Gift That Leaves a Lasting Impression
         </h1>
-        <h2 className='pt-6 px-20 font-karla'>
+        <h2 className='pt-6 px-20 font-karla md:text-xl md:pb-14'>
           A unqiue gift that will leave recipeients <br />
           feeling happy, excited, and surprised.
           With our dipped treats, you will get a <br />
