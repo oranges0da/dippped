@@ -47,7 +47,7 @@ const Home: NextPage = () => {
       <div className='bg-pink text-center pb-7'>
         <div className='flex justify-center'>
           <div className='flex-col'>
-            <img src='https://i.imgur.com/pxiPTue.jpg' />
+            <img src='https://i.imgur.com/mpfO7bt.jpg' />
           </div>
         </div>
         <h1 className='font-quando text-2xl pt-12 pl-10 pr-10'>
