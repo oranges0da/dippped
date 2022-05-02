@@ -15,20 +15,23 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ id, title, price, image, showPrice, showArrow }) => {
   return (
     <Link href={`products/${id}`}>
-      <motion.div 
-        className='hover:cursor-pointer mt-8 bg-pink font-karla font-semibold rounded mx-2'
-        initial={{ opacity:0 }}
-        animate={{ opacity:1 }}
-      >
-        <motion.img 
-          src={image} 
-        />
-        <div className='flex justify-between mx-3 px-2 pt-4 pb-4'>
+      <>
+        <motion.div 
+          className='hover:cursor-pointer mt-8 font-karla font-semibold rounded mx-2 overflow-hidden'
+          initial={{ opacity:0 }}
+          animate={{ opacity:1 }}
+        >
+          <motion.img 
+            src={image}
+            className='hover:scale-125 transition-all duration-400'
+          />
+        </motion.div>
+        <div className='flex justify-between mx-2 bg-pink'>
           <h1 className='font-quando text-sm mt-1'>{title}</h1>
           {showPrice && <h1>${price}.00</h1>}
           {showArrow && <CgArrowLongRight className='mt-1 mr-1 sm:hover:scale-125 transition-all' />}
         </div>
-      </motion.div>
+      </>
     </Link>
   )
 }

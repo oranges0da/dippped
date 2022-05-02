@@ -44,7 +44,7 @@ const Home: NextPage = () => {
       animate={{ opacity:1 }}
       transition={{ ease: "easeOut", duration: 2 }}
     >
-      <div className='bg-pink text-center pb-7 w-full'>
+      <div className='bg-pink text-center pb-7 w-full lg:mx-0 lg:px-0'>
         <div className='flex justify-center'>
           <div className='flex-col'>
             <img src='https://i.imgur.com/o7C8Yx1.jpg' />
