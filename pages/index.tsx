@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import ProductCard from '../components/product/HomeProductCard'
 import { motion } from 'framer-motion'
+import HomeProductCard from '../components/product/HomeProductCard'
+import Link from 'next/link'
 
 // data for bestseller section of home page
 const BestSellerData = [
@@ -66,9 +67,11 @@ const Home: NextPage = () => {
       <h1 className='md:ml-10 md:mt-20 md:pt-20 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
       <div className='sm:flex flex-wrap md:mx-6'>
         {BestSellerData.map((item, index) => (
-          <div key={index} className='basis-1/3'>
-            <ProductCard id={item.id} title={item.title} price={1} image={item.image} showPrice={false} showArrow={true} />
-          </div>
+          <Link href={`/products/${item.id}`}>
+            <div key={index} className='basis-1/3'>
+              <HomeProductCard title={item.title} price={1} image={item.image} showPrice={false} showArrow={true} />
+            </div>
+          </Link>
         ))}
       </div>
     </div>
