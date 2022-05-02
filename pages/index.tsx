@@ -62,14 +62,15 @@ const Home: NextPage = () => {
         </h2>
       </div>
     </motion.div>
-    <div></div>
-    <h1 className='md:ml-10 md:mt-20 md:pt-20 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
-    <div className='sm:flex flex-wrap md:mx-6'>
-      {BestSellerData.map((item, index) => (
-        <div key={index} className='basis-1/3'>
-          <ProductCard id={item.id} title={item.title} price={1} image={item.image} showPrice={false} showArrow={true} />
-        </div>
-      ))}
+    <div className='md:mt-20 md:pt-16'>
+      <h1 className='md:ml-10 md:mt-20 md:pt-20 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
+      <div className='sm:flex flex-wrap md:mx-6'>
+        {BestSellerData.map((item, index) => (
+          <div key={index} className='basis-1/3'>
+            <ProductCard id={item.id} title={item.title} price={1} image={item.image} showPrice={false} showArrow={true} />
+          </div>
+        ))}
+      </div>
     </div>
     </>
   )
