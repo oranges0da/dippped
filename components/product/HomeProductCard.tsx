@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, title, price, image, show
         >
           <motion.img 
             src={image}
-            className='hover:scale-125 transition-all duration-400'
+            className='hover:scale-110 transition-all duration-500'
           />
         </motion.div>
         <div className='flex justify-between mx-2 bg-pink'>
