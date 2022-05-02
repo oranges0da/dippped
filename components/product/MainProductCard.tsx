@@ -16,12 +16,13 @@ const MainProductCard: React.FC<MainProductCardProps> = ({ id, title, price, ima
   return (
     <Link href={`products/${id}`}>
       <motion.div 
-        className='hover:cursor-pointer mt-8 bg-white font-karla font-semibold rounded mx-2 hover:underline underline-offset-2 transition-all'
+        className='hover:cursor-pointer mt-8 bg-white font-karla font-semibold rounded mx-2 hover:underline underline-offset-2 transition-all overflow-hidden'
         initial={{ opacity:0 }}
         animate={{ opacity:1 }}
       >
         <motion.img 
-          src={image} 
+          src={image}
+          className='hover:scale-105 transition-all duration-500'
         />
         <div className='flex-col ml-1 pt-4 pb-4'>
           <h1 className='font-quando text-sm mt-1'>{title}</h1>
