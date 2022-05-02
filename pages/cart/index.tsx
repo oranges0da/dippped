@@ -3,9 +3,9 @@ import React from 'react'
 import { useRecoilValue } from 'recoil'
 import cartAtom from '../../state/atoms'
 import Head from 'next/head'
-import ProductCard from '../../components/product/HomeProductCard'
 import HasCartItems from '../../components/cart/HasCartItems'
 import NoCartItems from '../../components/cart/NoCartItems'
+import MainProductCard from '../../components/product/MainProductCard'
 
 // for product suggestions under cart
 const productSuggestions = [
@@ -48,8 +48,8 @@ const Cart: NextPage = () => {
       }
       <div className='sm:flex mx-auto'>
       {productSuggestions.map((item, index) => (
-        <div key={index} className='md:hover:scale-105 sm:transition-all'>
-          <ProductCard id={item.id} title={item.name} price={item.price} image={item.image} showPrice={false} showArrow={true} />
+        <div key={index}>
+          <MainProductCard id={item.id} title={item.name} price={item.price} image={item.image} showPrice={true} showArrow={false} />
         </div>
       ))}
       </div>
