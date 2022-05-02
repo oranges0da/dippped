@@ -39,21 +39,21 @@ const Home: NextPage = () => {
       <title>Dippped</title>
     </Head>
     <motion.div 
-      className='bg-pink border-b-2 border-pink align-center scale-150'
+      className='bg-pink border-b-2 border-pink align-center md:scale-150 pb-10'
       initial={{ opacity:0 }}
       animate={{ opacity:1 }}
       transition={{ ease: "easeOut", duration: 2 }}
     >
       <div className='flex justify-center'>
         <div className='flex-col'>
-          <img src='https://i.imgur.com/o7C8Yx1.jpg' className='md:scale-150'/>
+          <img src='https://i.imgur.com/qmWOcwb.jpg' className='md:scale-150'/>
         </div>
       </div>
-      <div className='md:mt-20 m-5'>
-        <h1 className='font-quando text-2xl pt-12 px-20 md:pt-20 md:text-4xl'>
+      <div className='md:mt-20 md:pt-20 mt-10 text-center'>
+        <h1 className='font-quando text-2xl px-20  md:text-md md:mt-20'>
           Give a Gift That Leaves a Lasting Impression
         </h1>
-        <h2 className='pt-6 px-20 font-karla md:text-xl md:pb-14'>
+        <h2 className='pt-5 font-karla md:text-xs px-12'>
           A unqiue gift that will leave recipeients <br />
           feeling happy, excited, and surprised.
           With our dipped treats, you will get a <br />
@@ -62,8 +62,9 @@ const Home: NextPage = () => {
         </h2>
       </div>
     </motion.div>
-    <h1 className='md:ml-10 md:mt-10 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
-    <div className='sm:flex flex-wrap md:mx-6 mt-20 pt-20'>
+    <div></div>
+    <h1 className='md:ml-10 md:mt-20 md:pt-20 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
+    <div className='sm:flex flex-wrap md:mx-6'>
       {BestSellerData.map((item, index) => (
         <div key={index} className='basis-1/3'>
           <ProductCard id={item.id} title={item.title} price={1} image={item.image} showPrice={false} showArrow={true} />
