@@ -9,9 +9,11 @@ const Layout: React.FC = ({ children }) => {
     <>
       <NavBar />
       <div className='lg:mx-20 lg:px-20' >
-        <main>
-          { children }
-        </main>
+        <div className='lg:mx-20'>
+          <main>
+            { children }
+          </main>
+        </div>
       </div>
       <Footer />
     </>

@@ -3,7 +3,7 @@ import React from 'react'
 import { useRecoilValue } from 'recoil'
 import cartAtom from '../../state/atoms'
 import Head from 'next/head'
-import ProductCard from '../../components/product/ProductCard'
+import ProductCard from '../../components/product/HomeProductCard'
 import HasCartItems from '../../components/cart/HasCartItems'
 import NoCartItems from '../../components/cart/NoCartItems'
 

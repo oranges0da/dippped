@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import ProductCard from '../components/product/ProductCard'
+import ProductCard from '../components/product/HomeProductCard'
 import { motion } from 'framer-motion'
 
 // data for bestseller section of home page

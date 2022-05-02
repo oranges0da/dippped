@@ -1,8 +1,8 @@
 import { NextPage } from 'next'
 import React from 'react'
 import Head from 'next/head'
-import ProductCard from '../../components/product/ProductCard'
 import axios from 'axios'
+import MainProductCard from '../../components/product/MainProductCard'
 
 const url = 'http://localhost:4000/products' // api url
 
@@ -20,7 +20,7 @@ const Product: NextPage = ({ products }: any) => {
         <div className='sm:flex flex-wrap md:mx-20 lg:my-10'>
           {products.map(item => (
             <div className='basis-1/2'>
-              <ProductCard
+              <MainProductCard
                 id={item.id}
                 title={item.name} 
                 price={item.price}
