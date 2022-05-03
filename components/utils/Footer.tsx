@@ -4,7 +4,7 @@ import Image from 'next/image'
 const Footer: React.FC = () => {
   // social media links
   return (
-    <div className='border-t border-gray my-6 font-karla text-sm'>
+    <div className='border-t border-gray my-6 font-karla text-sm mb-20'>
       <div className='flex md:justify-end justify-center my-14 md:mr-8'>
         <FooterButton source='https://i.imgur.com/fo9OVTB.png' size={28} path='https://www.facebook.com' />
         <FooterButton source='https://i.imgur.com/buM9fEc.png' size={25} path='https://www.tiktok.com/@dipppedberries?lang=en' />

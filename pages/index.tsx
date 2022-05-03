@@ -47,11 +47,11 @@ const Home: NextPage = () => {
     >
       <div className='flex justify-center'>
         <div className='flex-col'>
-          <img src='https://i.imgur.com/qmWOcwb.jpg' className='md:scale-150'/>
+          <img src='https://i.imgur.com/qmWOcwb.jpg' className='lg:scale-150 blur-sm'/>
         </div>
       </div>
-      <div className='md:mt-20 md:pt-20 mt-10 text-center'>
-        <h1 className='font-quando text-2xl px-20  md:text-md md:mt-20'>
+      <div className='lg:mt-20 lg:pt-20 mt-10 text-center'>
+        <h1 className='font-quando text-2xl px-20 lg:text-md lg:mt-20 lg:pt-20'>
           Give a Gift That Leaves a Lasting Impression
         </h1>
         <h2 className='pt-5 font-karla md:text-xs px-12'>
