@@ -5,7 +5,7 @@ import cartAtom from '../../state/atoms';
 import { useRecoilValue } from 'recoil';
 
 // various sizes for various icons
-const cartSize = 75
+const cartSize = 65
 const logoSize = 65
 
 // toggle mobile navbar
@@ -27,7 +27,7 @@ export const Navbar: React.FC = () => {
   const cartItems = useRecoilValue(cartAtom)
 
   return (
-    <nav className="py-8 sticky top-0 z-[1000] bg-white font-karla border-b border-gray">
+    <nav className="py-6 sticky top-0 z-[1000] bg-white font-karla border-b border-gray">
       <div className="flex justify-between">
         <div className="flex align-center lg:order-2">
           <button  type="button" className="sm:transition-all mobile-menu-button inline-flex items-center mr-4 text-sm sm:hover:scale-110 hover:cursor-pointer ml-6 rounded-lg lg:hidden hover" aria-controls="mobile-menu-2" aria-expanded="false">

@@ -47,7 +47,7 @@ const Home: NextPage = () => {
     >
       <div className='flex justify-center'>
         <div className='flex-col'>
-          <img src='https://i.imgur.com/qmWOcwb.jpg' className='lg:scale-150 blur-sm'/>
+          <img src='https://i.imgur.com/mpfO7bt.jpg' className='lg:scale-150 blur-sm'/>
         </div>
       </div>
       <div className='lg:mt-20 lg:pt-20 mt-10 text-center'>
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
         </h2>
       </div>
     </motion.div>
-    <div className='md:mt-20 md:pt-16'>
+    <div className='md:mt-20 md:pt-20'>
       <h1 className='md:ml-10 md:mt-20 md:pt-20 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
       <div className='sm:flex flex-wrap md:mx-6'>
         {BestSellerData.map((item, index) => (
