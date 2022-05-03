@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { motion } from 'framer-motion'
 import HomeProductCard from '../components/product/HomeProductCard'
 import Link from 'next/link'
+import ShopButton from '../components/home/ShopButton'
 
 // data for bestseller section of home page
 const BestSellerData = [
@@ -45,10 +46,10 @@ const Home: NextPage = () => {
       animate={{ opacity:1 }}
       transition={{ ease: "easeOut", duration: 2 }}
     >
-      <div className='flex justify-center bg-hero my-20 py-20 blur'>
-        <div className='flex-col my-20 py-20'>
-          <div className='my-20 py-20'>
-            Hello
+      <div className='flex justify-center align-center lg:my-20 py-20 text-center bg-hero'>
+        <div className='flex-col lg:my-20 py-20'>
+          <div className='py-16 mt-10'>
+            <ShopButton />
           </div>
         </div>
       </div>
@@ -65,7 +66,7 @@ const Home: NextPage = () => {
         </h2>
       </div>
     </motion.div>
-    <div className='md:mt-20 md:pt-20'>
+    <div className='md:mt-20 md:pt-4'>
       <h1 className='md:ml-10 md:mt-20 md:pt-20 ml-4 mt-6 font-quando text-2xl'>Bestsellers</h1>
       <div className='sm:flex flex-wrap md:mx-6'>
         {BestSellerData.map((item, index) => (
