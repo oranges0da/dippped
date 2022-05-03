@@ -45,9 +45,11 @@ const Home: NextPage = () => {
       animate={{ opacity:1 }}
       transition={{ ease: "easeOut", duration: 2 }}
     >
-      <div className='flex pt-20 justify-center bg-hero'>
-        <div className='flex-col pt-20'>
-          BUY here
+      <div className='flex justify-center bg-hero my-20 py-20 blur'>
+        <div className='flex-col my-20 py-20'>
+          <div className='my-20 py-20'>
+            Hello
+          </div>
         </div>
       </div>
       <div className='lg:mt-20 mt-10 text-center'>

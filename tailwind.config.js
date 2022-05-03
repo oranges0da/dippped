@@ -21,7 +21,7 @@ module.exports = {
         "black": '#000000'
       },
       backgroundImage: {
-        "hero": "url('https://i.imgur.com/mpfO7bt.jpg')"
+        "hero": "url('https://i.imgur.com/m1YTjMy.jpg?1')"
       }
     },
   },
