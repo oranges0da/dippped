@@ -45,13 +45,13 @@ const Home: NextPage = () => {
       animate={{ opacity:1 }}
       transition={{ ease: "easeOut", duration: 2 }}
     >
-      <div className='flex justify-center'>
-        <div className='flex-col'>
-          <img src='https://i.imgur.com/mpfO7bt.jpg' className='lg:scale-150 blur-sm'/>
+      <div className='flex pt-20 justify-center bg-hero'>
+        <div className='flex-col pt-20'>
+          BUY here
         </div>
       </div>
-      <div className='lg:mt-20 lg:pt-20 mt-10 text-center'>
-        <h1 className='font-quando text-2xl px-20 lg:text-md lg:mt-20 lg:pt-20'>
+      <div className='lg:mt-20 mt-10 text-center'>
+        <h1 className='font-quando text-2xl px-20 lg:text-md lg:mt-20'>
           Give a Gift That Leaves a Lasting Impression
         </h1>
         <h2 className='pt-5 font-karla md:text-xs px-12'>

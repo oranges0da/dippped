@@ -19,10 +19,10 @@ module.exports = {
         'gray': '#DCDCDC',
         "pink": '#FFCCCC',
         "black": '#000000'
+      },
+      backgroundImage: {
+        "hero": "url('https://i.imgur.com/mpfO7bt.jpg')"
       }
-    },
-    colors: {
-      'green': '##16d904',
     },
   },
   plugins: [],
